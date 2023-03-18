@@ -22,13 +22,21 @@ def load_data() -> pd.DataFrame:
 
     return pd.concat(dfs)
 
-def split_data(
-    df: pd.DataFrame, test_ratio: float
-) -> Tuple[Tuple[np.ndarray, np.ndarray], Tuple[np.ndarray, np.ndarray]]:
-    """Splits the input dataframe into training and test data based on the provided ratio."""
+def split_data(df: pd.DataFrame, test_ratio: float) -> Tuple[np.ndarray, np.ndarray]:
+    """
+    Splits the input dataframe into training and test data based on the provided ratio.
 
-    # TODO: Implement
-    return ((np.zeros(1), np.zeros(1)), (np.zeros(1), np.zeros(1)))
+    Args:
+        df (pd.DataFrame): The Pandas dataframe to be split
+        test_ratio (float): The proportion of samples in the test split (between 0 and 1)
+
+    Returns:
+        Tuple[np.ndarray, np.ndarray]: The np.ndarrays contain the 2-dimensional train and test data
+    """
+
+    df_test = df.sample(frac=test_ratio)
+    df_train = df.drop(df_test.index)
+    return df_train.values, df_test.values
     
 def build_model() -> Model:
     """Defines the architecture of the VAE and returns the compiled model."""
