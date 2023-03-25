@@ -6,9 +6,8 @@ import os
 from typing import Tuple
 import numpy as np
 import pandas as pd
-import tensorflow as tf
-from tensorflow import keras
-from keras import Model, layers
+from keras import Model 
+from .model_definition import build_model
 
 def load_data() -> pd.DataFrame:
     """Creates a dataframe from all files in the data/static directory."""
@@ -22,6 +21,8 @@ def load_data() -> pd.DataFrame:
 
     return pd.concat(dfs)
 
+
+build_model()
 def split_data(df: pd.DataFrame, test_ratio: float) -> Tuple[np.ndarray, np.ndarray]:
     """
     Splits the input dataframe into training and test data based on the provided ratio.
@@ -37,12 +38,6 @@ def split_data(df: pd.DataFrame, test_ratio: float) -> Tuple[np.ndarray, np.ndar
     df_test = df.sample(frac=test_ratio)
     df_train = df.drop(df_test.index)
     return df_train.values, df_test.values
-    
-def build_model() -> Model:
-    """Defines the architecture of the VAE and returns the compiled model."""
-
-    # TODO: Implement
-    return Model()
 
 def train_model(model: Model, features_train: np.ndarray, labels_train: np.ndarray):
     """Trains the model given the training data."""
