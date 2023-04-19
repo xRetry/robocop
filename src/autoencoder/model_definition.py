@@ -2,6 +2,7 @@ import tensorflow as tf
 from tensorflow import keras
 from keras import Model 
 from keras.layers import Dense, Input, Layer
+import keras_tuner as kt
 
 class Sampling(Layer):
     """Uses (z_mean, z_log_var) to sample z, the vector encoding a digit."""
@@ -55,28 +56,34 @@ class VAE(Model):
             "kl_loss": self.kl_loss_tracker.result(),
         }
 
-def build_model() -> Model:
+def build_model(hp: kt.HyperParameters) -> Model:
     """Defines the architecture of the VAE and returns the compiled model."""
 
-    dim_input = 100
-    dim_latent = 2
+    dim_input = 100 # TODO: Change to match actual input dim
+    dim_latent: int = hp.Int("latent dim", min_value=2, max_value=500)
+    num_dense: int = hp.Int("dense amount", min_value=1, max_value=20)
+    size_dense: int = hp.Int("dense size", min_value=10, max_value=1000)
+    lr: float = hp.Float("learning rate", min_value=1e-6, max_value=1e-2, sampling="log")
 
-    encoder_inputs = Input(shape=dim_input)
-    x = Dense(16, activation="relu")(encoder_inputs)
-    x = Dense(16, activation="relu")(x)
+    encoder_inputs = x = Input(shape=dim_input)
+
+    for _ in range(num_dense):
+        x = Dense(size_dense, activation="relu")(x)
+
     z_mean = Dense(dim_latent, name="z_mean")(x)
     z_log_var = Dense(dim_latent, name="z_log_var")(x)
     z = Sampling()([z_mean, z_log_var])
     encoder = Model(encoder_inputs, [z_mean, z_log_var, z], name="encoder")
 
-    latent_inputs = Input(shape=dim_latent)
-    x = Dense(16, activation="relu")(latent_inputs)
-    x = Dense(16, activation="relu")(x)
+    latent_inputs = x = Input(shape=dim_latent)
+    for _ in range(num_dense):
+        x = Dense(size_dense, activation="relu")(x)
+
     decoder_outputs = Dense(dim_input, activation="sigmoid")(x)
     decoder = Model(latent_inputs, decoder_outputs, name="decoder")
 
     vae = VAE(encoder, decoder)
-    vae.compile(optimizer=keras.optimizers.Adam())
+    vae.compile(optimizer=keras.optimizers.Adam(learning_rate=lr))
     return vae
 
 
