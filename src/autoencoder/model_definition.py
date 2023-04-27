@@ -56,7 +56,7 @@ class VAE(Model):
             "kl_loss": self.kl_loss_tracker.result(),
         }
 
-def build_model(hp: kt.HyperParameters) -> Model:
+def build_vae(hp: kt.HyperParameters) -> Model:
     """Defines the architecture of the VAE and returns the compiled model."""
 
     dim_input = 100 # TODO: Change to match actual input dim

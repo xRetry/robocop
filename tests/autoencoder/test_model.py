@@ -1,6 +1,6 @@
 import unittest
 import numpy as np
-from src.autoencoder.model_definition import build_model
+from src.autoencoder.model_definition import build_vae
 
 class TestModel(unittest.TestCase):
     # NOTE: Currently disabled
