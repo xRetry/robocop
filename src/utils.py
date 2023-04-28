@@ -3,7 +3,7 @@ This files contains convenience function for training, optimizing, testing and v
 """
 
 import os
-from typing import Tuple, Callable
+from typing import Tuple, Callable, Optional
 import numpy as np
 import pandas as pd
 from keras import Model, callbacks
@@ -36,11 +36,14 @@ def split_data(df: pd.DataFrame, test_ratio: float) -> Tuple[np.ndarray, np.ndar
     df_train = df.drop(df_test.index)
     return df_train.values, df_test.values
 
-def train_model(model: Model, features_train: np.ndarray, labels_train: np.ndarray, num_epochs: int):
+def train_model(model: Model, features_train: np.ndarray, labels_train: Optional[np.ndarray]=None, num_epochs: int=100):
     """Trains the model given the training data."""
 
-    model.fit(features_train, labels_train, epochs=num_epochs, validation_split=0.2)
-    pass
+    if labels_train is None:
+        model.fit(features_train, epochs=num_epochs, validation_split=0.2)
+    else:
+        model.fit(features_train, labels_train, epochs=num_epochs, validation_split=0.2)
+
 
 def tune_model(fn_build: Callable[[kt.HyperParameters], Model], features_train: np.ndarray, labels_train: np.ndarray) -> Model:
     """Returns the best model (untrained) for the provided model builder function."""
@@ -64,6 +67,8 @@ def tune_model(fn_build: Callable[[kt.HyperParameters], Model], features_train: 
 def test_model(model: Model, features_test: np.ndarray, label_test: np.ndarray):
     """Evaluates the model on the test dataset."""
 
+    preds = model.predict(features_test)
+    
     # TODO: Implement
     pass
 
