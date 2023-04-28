@@ -56,10 +56,10 @@ class VAE(Model):
             "kl_loss": self.kl_loss_tracker.result(),
         }
 
-def build_vae(hp: kt.HyperParameters) -> Model:
+def build_vae(input_size: int, hp: kt.HyperParameters) -> Model:
     """Defines the architecture of the VAE and returns the compiled model."""
 
-    dim_input = 100 # TODO: Change to match actual input dim
+    dim_input = input_size
     dim_latent: int = hp.Int("latent dim", min_value=2, max_value=500)
     num_dense: int = hp.Int("dense amount", min_value=1, max_value=20)
     size_dense: int = hp.Int("dense size", min_value=10, max_value=1000)

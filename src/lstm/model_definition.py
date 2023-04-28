@@ -7,10 +7,10 @@ from keras import Model
 from keras.layers import Dense, Input, LSTM
 import keras_tuner as kt
 
-def build_lstm(hp: kt.HyperParameters) -> Model:
+def build_lstm(input_size: int, hp: kt.HyperParameters) -> Model:
     """Defines the architecture of the LSTM and returns the compiled model."""
 
-    dim_input = 100 # TODO: Change to match actual input dim
+    dim_input = input_size 
     dim_output = 3
     num_lstm: int = hp.Int("lstm amount", min_value=1, max_value=20)
     size_lstm: int = hp.Int("lstm size", min_value=10, max_value=1000)
