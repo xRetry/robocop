@@ -1,5 +1,6 @@
+import numpy as np
 import tensorflow as tf
-from tensorflow import keras
+from tensorflow import Tensor, keras
 from keras import Model 
 from keras.layers import Dense, Input, Layer
 import keras_tuner as kt
@@ -15,7 +16,17 @@ class Sampling(Layer):
         return z_mean + tf.exp(0.5 * z_log_var) * epsilon
 
 class VAE(Model):
-    def __init__(self, encoder, decoder, **kwargs):
+    """Defines a variational autoencoder as combination of encoder and decoder."""
+
+    encoder: Model
+    decoder: Model
+    total_loss_tracker: keras.metrics.Mean
+    reconstruction_loss_tracker: keras.metrics.Mean
+    kl_loss_tracker: keras.metrics.Mean
+    latent: tuple[Tensor, Tensor, Tensor]
+    last_pred: tuple[Tensor, Tensor]
+
+    def __init__(self, encoder: Model, decoder: Model, **kwargs):
         super().__init__(**kwargs)
         self.encoder = encoder
         self.decoder = decoder
@@ -25,31 +36,52 @@ class VAE(Model):
         )
         self.kl_loss_tracker = keras.metrics.Mean(name="kl_loss")
 
+    def __call__(self, data: Tensor, **_):
+        """Gets called when the model is evaluted on the validation set."""
+
+        z_mean, z_log_var, z = self.encoder(data)
+        reconstruction = self.decoder(z)
+
+        self.latent = (z_mean, z_log_var, z)
+        self.last_pred = (data, reconstruction)
+        return reconstruction
+
+    def compute_loss(self, *_):
+        z_mean, z_log_var, _ = self.latent
+        data, reconstruction = self.last_pred
+
+        reconstruction_loss = tf.reduce_mean(
+            tf.reduce_sum(
+                keras.losses.binary_crossentropy(data, reconstruction), axis=None
+            )
+        )
+        kl_loss = -0.5 * (1 + z_log_var - tf.square(z_mean) - tf.exp(z_log_var))
+        kl_loss = tf.reduce_mean(tf.reduce_sum(kl_loss, axis=1))
+        total_loss = reconstruction_loss + kl_loss
+
+        self.total_loss_tracker.update_state(total_loss)
+        self.reconstruction_loss_tracker.update_state(reconstruction_loss)
+        self.kl_loss_tracker.update_state(kl_loss)
+        return total_loss
+
     @property
-    def metrics(self):
+    def metrics(self) -> list[keras.metrics.Mean]:
         return [
             self.total_loss_tracker,
             self.reconstruction_loss_tracker,
             self.kl_loss_tracker,
         ]
 
-    def train_step(self, data):
+    def train_step(self, data: Tensor) -> dict[str, Tensor]:
         with tf.GradientTape() as tape:
             z_mean, z_log_var, z = self.encoder(data)
             reconstruction = self.decoder(z)
-            reconstruction_loss = tf.reduce_mean(
-                tf.reduce_sum(
-                    keras.losses.binary_crossentropy(data, reconstruction), axis=None
-                )
-            )
-            kl_loss = -0.5 * (1 + z_log_var - tf.square(z_mean) - tf.exp(z_log_var))
-            kl_loss = tf.reduce_mean(tf.reduce_sum(kl_loss, axis=1))
-            total_loss = reconstruction_loss + kl_loss
+            self.latent = (z_mean, z_log_var, z)
+            self.last_pred = (data, reconstruction)
+            total_loss = self.compute_loss()
         grads = tape.gradient(total_loss, self.trainable_weights)
         self.optimizer.apply_gradients(zip(grads, self.trainable_weights))
-        self.total_loss_tracker.update_state(total_loss)
-        self.reconstruction_loss_tracker.update_state(reconstruction_loss)
-        self.kl_loss_tracker.update_state(kl_loss)
+
         return {
             "loss": self.total_loss_tracker.result(),
             "reconstruction_loss": self.reconstruction_loss_tracker.result(),
@@ -63,7 +95,7 @@ def build_vae(input_size: int, hp: kt.HyperParameters) -> Model:
     dim_latent: int = hp.Int("latent dim", min_value=2, max_value=500)
     num_dense: int = hp.Int("dense amount", min_value=1, max_value=20)
     size_dense: int = hp.Int("dense size", min_value=10, max_value=1000)
-    lr: float = hp.Float("learning rate", min_value=1e-6, max_value=1e-2, sampling="log")
+    lr: float = hp.Float("learning rate", min_value=1e-6, max_value=1e-3, sampling="log")
 
     encoder_inputs = x = Input(shape=dim_input)
 
