@@ -14,7 +14,7 @@ def main():
     model = tune_model(partial(build_vae, 100), *data_train)
     train_model(model, *data_train)
     test_model(model, *data_test)
-    visualize_model(model)
+    visualize_model(model.encoder, data_train[0])
 
 if __name__ == "__main__":
     main()

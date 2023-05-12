@@ -8,6 +8,8 @@ import numpy as np
 import pandas as pd
 from keras import Model, callbacks
 import keras_tuner as kt
+from sklearn.manifold import TSNE
+import matplotlib.pyplot as plt
 
 def load_data(folder_path) -> pd.DataFrame:
     """Creates a dataframe from all files in the data/auto directory."""
@@ -72,11 +74,23 @@ def test_model(model: Model, features_test: np.ndarray, label_test: np.ndarray):
     # TODO: Implement
     pass
 
-def visualize_model(model: Model):
-    """Uses t-SNE to visualize the trained VAE."""
+def visualize_model(encoder: Model, features: np.ndarray):
+    """
+    Uses t-SNE to visualize the trained VAE.
 
-    # TODO: Implement
-    pass
+    Args:
+        encoder (Model): The encoder of an VAE
+        features (np.ndarray): Input (sensor) data
+    """
+
+    _, _, samples = encoder.predict(features)
+
+    sne = TSNE(n_components=2, learning_rate="auto", init="random")
+    x_embed = sne.fit_transform(samples)
+
+    plt.figure(figsize=(600, 400))
+    plt.plot(x_embed[0], x_embed[1])
+    plt.show()
 
 if __name__ == "__main__":
     pass
