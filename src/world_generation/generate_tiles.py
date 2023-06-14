@@ -6,6 +6,8 @@ Created on Mon Jun 12 11:26:32 2023
 @author: heiko
 """
 import random
+import os
+from pathlib import Path
 
 def read_file(path: str) -> str:
     file = open(path, "r")
@@ -35,8 +37,8 @@ def main():
 #   <ambient>FFF</ambient>   1 0 0
     to_replace =["XXXX","YYYYYY", "MM1", "MM2", "FFF"]   
       
-    for i in range(10):
-        for j in range(10):
+    for i in range(1):
+        for j in range(1):
             
             mname = "tile_"+str(i-5)+"_"+str(j-5)
             pos = str(-9+2*i)+" "+str(-9+2*j)+" 0 0 0 0"           
@@ -48,9 +50,11 @@ def main():
                 color ="0.1 0.9 0"
             
             replacement =[mname,pos, m1, m2, color]
-            
-            main_file = "/home/heiko/coding/robocop/gazebo_templates/tile_base.sdf"
-            output_file = "/home/heiko/coding/robocop/gazebo_generated/tiles/tile_"+str(i)+str(j)+".sdf"
+       
+            path1 = Path(__file__).parents[2]
+          
+            main_file = os.path.join(path1, 'gazebo_templates/tile_base.sdf')
+            output_file = os.path.join(path1,"gazebo_generated/tiles/tile_"+str(i)+str(j)+".sdf")
             
             generate_sfd(main_file,output_file,to_replace,replacement)
         
