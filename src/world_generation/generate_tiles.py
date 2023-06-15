@@ -37,8 +37,11 @@ def main():
 #   <ambient>FFF</ambient>   1 0 0
     to_replace =["XXXX","YYYYYY", "MM1", "MM2", "FFF"]   
       
-    for i in range(1):
-        for j in range(1):
+    for i in range(10):
+        
+        
+        #range 4 to 6 updates only the middle tiles, which are used in carworld5
+        for j in range(4,6):
             
             mname = "tile_"+str(i-5)+"_"+str(j-5)
             pos = str(-9+2*i)+" "+str(-9+2*j)+" 0 0 0 0"           
@@ -53,8 +56,8 @@ def main():
        
             path1 = Path(__file__).parents[2]
           
-            main_file = os.path.join(path1, 'gazebo_templates/tile_base.sdf')
-            output_file = os.path.join(path1,"gazebo_generated/tiles/tile_"+str(i)+str(j)+".sdf")
+            main_file = os.path.join(path1, 'generated_world/gazebo_templates/tile_base.sdf')
+            output_file = os.path.join(path1,"generated_world/gazebo_generated/tiles/tile_"+str(i)+str(j)+".sdf")
             
             generate_sfd(main_file,output_file,to_replace,replacement)
         

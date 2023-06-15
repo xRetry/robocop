@@ -66,307 +66,313 @@
       <pose>0 0 0 0 -0 0</pose>
       <self_collide>false</self_collide>
     </model>
+	<model name='stackedRobot'>
+      <pose>0 0 0 0 -0 0</pose>
+      <include>
+			  <uri>model://gazebo_templates/stackedRobot.sdf</uri>
+		</include>
+	</model>
     <model name='planks'>
       <pose>0 0 0 0 -0 0</pose>
       <include>
-			  <uri>model://tiles/tile_00.sdf</uri>
+			  <uri>model://gazebo_generated/tiles/tile_00.sdf</uri>
 		  </include>
       <include>
-			  <uri>model://tiles/tile_01.sdf</uri>
+			  <uri>model://gazebo_generated/tiles/tile_01.sdf</uri>
 		  </include>
       <include>
-			  <uri>model://tiles/tile_02.sdf</uri>
+			  <uri>model://gazebo_generated/tiles/tile_02.sdf</uri>
 		  </include>
       <include>
-			  <uri>model://tiles/tile_03.sdf</uri>
+			  <uri>model://gazebo_generated/tiles/tile_03.sdf</uri>
 		  </include>
       <include>
-			  <uri>model://tiles/tile_04.sdf</uri>
+			  <uri>model://gazebo_generated/tiles/tile_04.sdf</uri>
 		  </include>
       <include>
-			  <uri>model://tiles/tile_05.sdf</uri>
+			  <uri>model://gazebo_generated/tiles/tile_05.sdf</uri>
 		  </include>
       <include>
-			  <uri>model://tiles/tile_06.sdf</uri>
+			  <uri>model://gazebo_generated/tiles/tile_06.sdf</uri>
 		  </include>
       <include>
-			  <uri>model://tiles/tile_07.sdf</uri>
+			  <uri>model://gazebo_generated/tiles/tile_07.sdf</uri>
 		  </include>
       <include>
-			  <uri>model://tiles/tile_08.sdf</uri>
+			  <uri>model://gazebo_generated/tiles/tile_08.sdf</uri>
 		  </include>
       <include>
-			  <uri>model://tiles/tile_09.sdf</uri>
+			  <uri>model://gazebo_generated/tiles/tile_09.sdf</uri>
 		  </include>
       <include>
-			  <uri>model://tiles/tile_10.sdf</uri>
+			  <uri>model://gazebo_generated/tiles/tile_10.sdf</uri>
 		  </include>
       <include>
-			  <uri>model://tiles/tile_11.sdf</uri>
+			  <uri>model://gazebo_generated/tiles/tile_11.sdf</uri>
 		  </include>
       <include>
-			  <uri>model://tiles/tile_12.sdf</uri>
+			  <uri>model://gazebo_generated/tiles/tile_12.sdf</uri>
 		  </include>
       <include>
-			  <uri>model://tiles/tile_13.sdf</uri>
+			  <uri>model://gazebo_generated/tiles/tile_13.sdf</uri>
 		  </include>
       <include>
-			  <uri>model://tiles/tile_14.sdf</uri>
+			  <uri>model://gazebo_generated/tiles/tile_14.sdf</uri>
 		  </include>
       <include>
-			  <uri>model://tiles/tile_15.sdf</uri>
+			  <uri>model://gazebo_generated/tiles/tile_15.sdf</uri>
 		  </include>
       <include>
-			  <uri>model://tiles/tile_16.sdf</uri>
+			  <uri>model://gazebo_generated/tiles/tile_16.sdf</uri>
 		  </include>
       <include>
-			  <uri>model://tiles/tile_17.sdf</uri>
+			  <uri>model://gazebo_generated/tiles/tile_17.sdf</uri>
 		  </include>
       <include>
-			  <uri>model://tiles/tile_18.sdf</uri>
+			  <uri>model://gazebo_generated/tiles/tile_18.sdf</uri>
 		  </include>
       <include>
-			  <uri>model://tiles/tile_19.sdf</uri>
+			  <uri>model://gazebo_generated/tiles/tile_19.sdf</uri>
       </include>
       <include>
-			  <uri>model://tiles/tile_20.sdf</uri>
+			  <uri>model://gazebo_generated/tiles/tile_20.sdf</uri>
 		  </include>
       <include>
-			  <uri>model://tiles/tile_21.sdf</uri>
+			  <uri>model://gazebo_generated/tiles/tile_21.sdf</uri>
 		  </include>
       <include>
-			  <uri>model://tiles/tile_22.sdf</uri>
+			  <uri>model://gazebo_generated/tiles/tile_22.sdf</uri>
 		  </include>
       <include>
-			  <uri>model://tiles/tile_23.sdf</uri>
+			  <uri>model://gazebo_generated/tiles/tile_23.sdf</uri>
 		  </include>
       <include>
-			  <uri>model://tiles/tile_24.sdf</uri>
+			  <uri>model://gazebo_generated/tiles/tile_24.sdf</uri>
 		  </include>
       <include>
-			  <uri>model://tiles/tile_25.sdf</uri>
+			  <uri>model://gazebo_generated/tiles/tile_25.sdf</uri>
 		  </include>
       <include>
-			  <uri>model://tiles/tile_26.sdf</uri>
+			  <uri>model://gazebo_generated/tiles/tile_26.sdf</uri>
 		  </include>
       <include>
-			  <uri>model://tiles/tile_27.sdf</uri>
+			  <uri>model://gazebo_generated/tiles/tile_27.sdf</uri>
 		  </include>
       <include>
-			  <uri>model://tiles/tile_28.sdf</uri>
+			  <uri>model://gazebo_generated/tiles/tile_28.sdf</uri>
 		  </include>
       <include>
-			  <uri>model://tiles/tile_29.sdf</uri>
+			  <uri>model://gazebo_generated/tiles/tile_29.sdf</uri>
 		  </include>
       <include>
-			  <uri>model://tiles/tile_30.sdf</uri>
+			  <uri>model://gazebo_generated/tiles/tile_30.sdf</uri>
 		  </include>
       <include>
-			  <uri>model://tiles/tile_31.sdf</uri>
+			  <uri>model://gazebo_generated/tiles/tile_31.sdf</uri>
 		  </include>
       <include>
-			  <uri>model://tiles/tile_32.sdf</uri>
+			  <uri>model://gazebo_generated/tiles/tile_32.sdf</uri>
 		  </include>
       <include>
-			  <uri>model://tiles/tile_33.sdf</uri>
+			  <uri>model://gazebo_generated/tiles/tile_33.sdf</uri>
 		  </include>
       <include>
-			  <uri>model://tiles/tile_34.sdf</uri>
+			  <uri>model://gazebo_generated/tiles/tile_34.sdf</uri>
 		  </include>
       <include>
-			  <uri>model://tiles/tile_35.sdf</uri>
+			  <uri>model://gazebo_generated/tiles/tile_35.sdf</uri>
 		  </include>
       <include>
-			  <uri>model://tiles/tile_36.sdf</uri>
+			  <uri>model://gazebo_generated/tiles/tile_36.sdf</uri>
 		  </include>
       <include>
-			  <uri>model://tiles/tile_37.sdf</uri>
+			  <uri>model://gazebo_generated/tiles/tile_37.sdf</uri>
 		  </include>
       <include>
-			  <uri>model://tiles/tile_38.sdf</uri>
+			  <uri>model://gazebo_generated/tiles/tile_38.sdf</uri>
 		  </include>
       <include>
-			  <uri>model://tiles/tile_39.sdf</uri>
+			  <uri>model://gazebo_generated/tiles/tile_39.sdf</uri>
 		  </include>
       <include>
-			  <uri>model://tiles/tile_40.sdf</uri>
+			  <uri>model://gazebo_generated/tiles/tile_40.sdf</uri>
 		  </include>
       <include>
-			  <uri>model://tiles/tile_41.sdf</uri>
+			  <uri>model://gazebo_generated/tiles/tile_41.sdf</uri>
 		  </include>
       <include>
-			  <uri>model://tiles/tile_42.sdf</uri>
+			  <uri>model://gazebo_generated/tiles/tile_42.sdf</uri>
 		  </include>
       <include>
-			  <uri>model://tiles/tile_43.sdf</uri>
+			  <uri>model://gazebo_generated/tiles/tile_43.sdf</uri>
 		  </include>
       <include>
-			  <uri>model://tiles/tile_44.sdf</uri>
+			  <uri>model://gazebo_generated/tiles/tile_44.sdf</uri>
 		  </include>
       <include>
-			  <uri>model://tiles/tile_45.sdf</uri>
+			  <uri>model://gazebo_generated/tiles/tile_45.sdf</uri>
 		  </include>
       <include>
-			  <uri>model://tiles/tile_46.sdf</uri>
+			  <uri>model://gazebo_generated/tiles/tile_46.sdf</uri>
 		  </include>
       <include>
-			  <uri>model://tiles/tile_47.sdf</uri>
+			  <uri>model://gazebo_generated/tiles/tile_47.sdf</uri>
 		  </include>
       <include>
-			  <uri>model://tiles/tile_48.sdf</uri>
+			  <uri>model://gazebo_generated/tiles/tile_48.sdf</uri>
 		  </include>
       <include>
-			  <uri>model://tiles/tile_49.sdf</uri>
+			  <uri>model://gazebo_generated/tiles/tile_49.sdf</uri>
 		  </include> 
       <include>
-			  <uri>model://tiles/tile_50.sdf</uri>
+			  <uri>model://gazebo_generated/tiles/tile_50.sdf</uri>
 		  </include>
       <include>
-			  <uri>model://tiles/tile_51.sdf</uri>
+			  <uri>model://gazebo_generated/tiles/tile_51.sdf</uri>
 		  </include>
       <include>
-			  <uri>model://tiles/tile_52.sdf</uri>
+			  <uri>model://gazebo_generated/tiles/tile_52.sdf</uri>
 		  </include>
       <include>
-			  <uri>model://tiles/tile_53.sdf</uri>
+			  <uri>model://gazebo_generated/tiles/tile_53.sdf</uri>
 		  </include>
       <include>
-			  <uri>model://tiles/tile_54.sdf</uri>
+			  <uri>model://gazebo_generated/tiles/tile_54.sdf</uri>
 		  </include>
       <include>
-			  <uri>model://tiles/tile_55.sdf</uri>
+			  <uri>model://gazebo_generated/tiles/tile_55.sdf</uri>
 		  </include>
       <include>
-			  <uri>model://tiles/tile_56.sdf</uri>
+			  <uri>model://gazebo_generated/tiles/tile_56.sdf</uri>
 		  </include>
       <include>
-			  <uri>model://tiles/tile_57.sdf</uri>
+			  <uri>model://gazebo_generated/tiles/tile_57.sdf</uri>
 		  </include>
       <include>
-			  <uri>model://tiles/tile_58.sdf</uri>
+			  <uri>model://gazebo_generated/tiles/tile_58.sdf</uri>
 		  </include>
       <include>
-			  <uri>model://tiles/tile_59.sdf</uri>
+			  <uri>model://gazebo_generated/tiles/tile_59.sdf</uri>
 		  </include>
       <include>
-			  <uri>model://tiles/tile_60.sdf</uri>
+			  <uri>model://gazebo_generated/tiles/tile_60.sdf</uri>
 		  </include>
       <include>
-			  <uri>model://tiles/tile_61.sdf</uri>
+			  <uri>model://gazebo_generated/tiles/tile_61.sdf</uri>
 		  </include>
       <include>
-			  <uri>model://tiles/tile_62.sdf</uri>
+			  <uri>model://gazebo_generated/tiles/tile_62.sdf</uri>
 		  </include>
       <include>
-			  <uri>model://tiles/tile_63.sdf</uri>
+			  <uri>model://gazebo_generated/tiles/tile_63.sdf</uri>
 		  </include>
       <include>
-			  <uri>model://tiles/tile_64.sdf</uri>
+			  <uri>model://gazebo_generated/tiles/tile_64.sdf</uri>
 		  </include>
       <include>
-			  <uri>model://tiles/tile_65.sdf</uri>
+			  <uri>model://gazebo_generated/tiles/tile_65.sdf</uri>
 		  </include>
       <include>
-			  <uri>model://tiles/tile_66.sdf</uri>
+			  <uri>model://gazebo_generated/tiles/tile_66.sdf</uri>
 		  </include>
       <include>
-			  <uri>model://tiles/tile_67.sdf</uri>
+			  <uri>model://gazebo_generated/tiles/tile_67.sdf</uri>
 		  </include>
       <include>
-			  <uri>model://tiles/tile_68.sdf</uri>
+			  <uri>model://gazebo_generated/tiles/tile_68.sdf</uri>
 		  </include>
       <include>
-			  <uri>model://tiles/tile_69.sdf</uri>
+			  <uri>model://gazebo_generated/tiles/tile_69.sdf</uri>
 		  </include>  
       <include>
-			  <uri>model://tiles/tile_70.sdf</uri>
+			  <uri>model://gazebo_generated/tiles/tile_70.sdf</uri>
 		  </include>
       <include>
-			  <uri>model://tiles/tile_71.sdf</uri>
+			  <uri>model://gazebo_generated/tiles/tile_71.sdf</uri>
 		  </include>
       <include>
-			  <uri>model://tiles/tile_72.sdf</uri>
+			  <uri>model://gazebo_generated/tiles/tile_72.sdf</uri>
 		  </include>
       <include>
-			  <uri>model://tiles/tile_73.sdf</uri>
+			  <uri>model://gazebo_generated/tiles/tile_73.sdf</uri>
 		  </include>
       <include>
-			  <uri>model://tiles/tile_74.sdf</uri>
+			  <uri>model://gazebo_generated/tiles/tile_74.sdf</uri>
 		  </include>
       <include>
-			  <uri>model://tiles/tile_75.sdf</uri>
+			  <uri>model://gazebo_generated/tiles/tile_75.sdf</uri>
 		  </include>
       <include>
-			  <uri>model://tiles/tile_76.sdf</uri>
+			  <uri>model://gazebo_generated/tiles/tile_76.sdf</uri>
 		  </include>
       <include>
-			  <uri>model://tiles/tile_77.sdf</uri>
+			  <uri>model://gazebo_generated/tiles/tile_77.sdf</uri>
 		  </include>
       <include>
-			  <uri>model://tiles/tile_78.sdf</uri>
+			  <uri>model://gazebo_generated/tiles/tile_78.sdf</uri>
 		  </include>
       <include>
-			  <uri>model://tiles/tile_79.sdf</uri>
+			  <uri>model://gazebo_generated/tiles/tile_79.sdf</uri>
 		  </include> 
       <include>
-			  <uri>model://tiles/tile_80.sdf</uri>
+			  <uri>model://gazebo_generated/tiles/tile_80.sdf</uri>
 		  </include>
       <include>
-			  <uri>model://tiles/tile_81.sdf</uri>
+			  <uri>model://gazebo_generated/tiles/tile_81.sdf</uri>
 		  </include>
       <include>
-			  <uri>model://tiles/tile_82.sdf</uri>
+			  <uri>model://gazebo_generated/tiles/tile_82.sdf</uri>
 		  </include>
       <include>
-			  <uri>model://tiles/tile_83.sdf</uri>
+			  <uri>model://gazebo_generated/tiles/tile_83.sdf</uri>
 		  </include>
       <include>
-			  <uri>model://tiles/tile_84.sdf</uri>
+			  <uri>model://gazebo_generated/tiles/tile_84.sdf</uri>
 		  </include>
       <include>
-			  <uri>model://tiles/tile_85.sdf</uri>
+			  <uri>model://gazebo_generated/tiles/tile_85.sdf</uri>
 		  </include>
       <include>
-			  <uri>model://tiles/tile_86.sdf</uri>
+			  <uri>model://gazebo_generated/tiles/tile_86.sdf</uri>
 		  </include>
       <include>
-			  <uri>model://tiles/tile_87.sdf</uri>
+			  <uri>model://gazebo_generated/tiles/tile_87.sdf</uri>
 		  </include>
       <include>
-			  <uri>model://tiles/tile_88.sdf</uri>
+			  <uri>model://gazebo_generated/tiles/tile_88.sdf</uri>
 		  </include>
       <include>
-			  <uri>model://tiles/tile_89.sdf</uri>
+			  <uri>model://gazebo_generated/tiles/tile_89.sdf</uri>
 		  </include>
       <include>
-			  <uri>model://tiles/tile_90.sdf</uri>
+			  <uri>model://gazebo_generated/tiles/tile_90.sdf</uri>
 		  </include>
       <include>
-			  <uri>model://tiles/tile_91.sdf</uri>
+			  <uri>model://gazebo_generated/tiles/tile_91.sdf</uri>
 		  </include>
       <include>
-			  <uri>model://tiles/tile_92.sdf</uri>
+			  <uri>model://gazebo_generated/tiles/tile_92.sdf</uri>
 		  </include>
       <include>
-			  <uri>model://tiles/tile_93.sdf</uri>
+			  <uri>model://gazebo_generated/tiles/tile_93.sdf</uri>
 		  </include>
       <include>
-			  <uri>model://tiles/tile_94.sdf</uri>
+			  <uri>model://gazebo_generated/tiles/tile_94.sdf</uri>
 		  </include>
       <include>
-			  <uri>model://tiles/tile_95.sdf</uri>
+			  <uri>model://gazebo_generated/tiles/tile_95.sdf</uri>
 		  </include>
       <include>
-			  <uri>model://tiles/tile_96.sdf</uri>
+			  <uri>model://gazebo_generated/tiles/tile_96.sdf</uri>
 		  </include>
       <include>
-			  <uri>model://tiles/tile_97.sdf</uri>
+			  <uri>model://gazebo_generated/tiles/tile_97.sdf</uri>
 		  </include>
       <include>
-			  <uri>model://tiles/tile_98.sdf</uri>
+			  <uri>model://gazebo_generated/tiles/tile_98.sdf</uri>
 		  </include>
       <include>
-			  <uri>model://tiles/tile_99.sdf</uri>
+			  <uri>model://gazebo_generated/tiles/tile_99.sdf</uri>
 		  </include>                                
       <static>false</static>
       <self_collide>false</self_collide>

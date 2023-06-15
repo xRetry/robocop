@@ -1,4 +1,5 @@
-        <model name="robot">
+<sdf version='1.6'>
+       <model name="robot">
         <enable_wind>0</enable_wind>
         <static>0</static>
         <link name="base_link">
@@ -616,3 +617,4 @@
             </axis>
         </joint>
     </model>
+    </sdf>

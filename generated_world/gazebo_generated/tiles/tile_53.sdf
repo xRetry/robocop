@@ -1,0 +1,50 @@
+<sdf version="1.6">
+  <model name="tile_0_-2">
+    <pose>1 -3 0 0 0 0</pose>
+      <link name="tile_0_-2">
+        <pose>0 0 0 0 -0 0</pose>
+        <inertial>
+          <mass>260.134</mass>
+          <inertia>
+            <ixx>86.8209</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>86.8213</iyy>
+            <iyz>0</iyz>
+            <izz>173.423</izz>
+          </inertia>
+          <pose>0 0 0 0 -0 0</pose>
+        </inertial>
+        <visual name='visual'>
+          <geometry>
+            <box>
+              <size>2 2 0.1</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.1 0.9 0 0.8</ambient>
+            <diffuse>0.1 0.9 0 0.8</diffuse>
+            <specular>0.1 0.9 0 0.8</specular>
+          </material>
+        </visual>
+        <collision name='collision'>
+          <geometry>
+            <box>
+              <size>2 2 0.1</size>
+            </box>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>95.0</mu>
+                <mu2>30.0</mu2>
+              </ode>
+            </friction>
+            <bounce/>
+            <contact/>
+          </surface>
+        </collision>
+        <enable_wind>false</enable_wind>
+      </link>
+  </model>
+</sdf>
