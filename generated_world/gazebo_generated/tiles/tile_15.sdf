@@ -22,9 +22,9 @@
             </box>
           </geometry>
           <material>
-            <ambient>0.1 0.9 0 0.8</ambient>
-            <diffuse>0.1 0.9 0 0.8</diffuse>
-            <specular>0.1 0.9 0 0.8</specular>
+            <ambient>0.9 0.1 0 0.8</ambient>
+            <diffuse>0.9 0.1 0 0.8</diffuse>
+            <specular>0.9 0.1 0 0.8</specular>
           </material>
         </visual>
         <collision name='collision'>
@@ -36,8 +36,8 @@
           <surface>
             <friction>
               <ode>
-                <mu>53.0</mu>
-                <mu2>12.0</mu2>
+                <mu>24.0</mu>
+                <mu2>20.0</mu2>
               </ode>
             </friction>
             <bounce/>

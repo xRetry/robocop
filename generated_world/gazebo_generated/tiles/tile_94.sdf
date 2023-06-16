@@ -36,8 +36,8 @@
           <surface>
             <friction>
               <ode>
-                <mu>89.0</mu>
-                <mu2>96.0</mu2>
+                <mu>70.0</mu>
+                <mu2>75.0</mu2>
               </ode>
             </friction>
             <bounce/>
