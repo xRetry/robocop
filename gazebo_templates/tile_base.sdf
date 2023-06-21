@@ -1,0 +1,48 @@
+  <model name="XXXX">
+    <pose>YYYYYY</pose>
+      <link name="XXXX">
+        <pose>0 0 0 0 -0 0</pose>
+        <inertial>
+          <mass>260.134</mass>
+          <inertia>
+            <ixx>86.8209</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>86.8213</iyy>
+            <iyz>0</iyz>
+            <izz>173.423</izz>
+          </inertia>
+          <pose>0 0 0 0 -0 0</pose>
+        </inertial>
+        <visual name='visual'>
+          <geometry>
+            <box>
+              <size>2 2 0.1</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>FFF 0.8</ambient>
+            <diffuse>FFF 0.8</diffuse>
+            <specular>FFF 0.8</specular>
+          </material>
+        </visual>
+        <collision name='collision'>
+          <geometry>
+            <box>
+              <size>2 2 0.1</size>
+            </box>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>MM1</mu>
+                <mu2>MM2</mu2>
+              </ode>
+            </friction>
+            <bounce/>
+            <contact/>
+          </surface>
+        </collision>
+        <enable_wind>false</enable_wind>
+      </link>
+  </model>

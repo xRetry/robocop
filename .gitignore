@@ -1,4 +1,2 @@
 venv/
 __pycache__/
-gazebo_generated/tiles/
-gazebo_generated/planks/

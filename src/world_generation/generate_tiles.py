@@ -20,7 +20,6 @@ def write_file(path: str, content: str) -> None:
     file.write(content)
     file.close()
 
-
 def generate_sfd(main_file: str, output_file: str, to_replace, replacement) -> None:
     main_content = read_file(main_file)
     for i in range(len(to_replace)):
