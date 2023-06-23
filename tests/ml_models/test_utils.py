@@ -1,7 +1,7 @@
 import unittest
 import pandas as pd
 import numpy as np
-from src.utils import split_data
+from src.ml_models.utils import split_data
 
 class TestSplitData(unittest.TestCase):
     def test_positive_case(self):

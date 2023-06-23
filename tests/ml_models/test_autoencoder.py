@@ -2,8 +2,8 @@ import unittest
 import numpy as np
 import keras
 import keras_tuner as kt
-from src.autoencoder.model_definition import build_vae
-from src.utils import train_model
+from src.ml_models.autoencoder import build_vae
+from src.ml_models.utils import train_model
 
 class TestModel(unittest.TestCase):
     def test_build_model(self):

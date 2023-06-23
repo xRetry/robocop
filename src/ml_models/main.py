@@ -3,7 +3,7 @@ This files executes the actual training, optimization and testing the LSTM.
 """
 
 from functools import partial
-from .model_definition import build_vae
+from autoencoder import build_vae
 from utils import (load_data, split_data, tune_model, train_model,
     test_model, visualize_model)
 
