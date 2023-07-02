@@ -97,6 +97,8 @@ def generate_objects(template_path: str) -> str:
         current_template = template_string
         for to_repl, repl in zip(to_replace, replacement):
             current_template = current_template.replace(to_repl, repl)
+            
+        full_string += current_template
        
     return full_string
       
