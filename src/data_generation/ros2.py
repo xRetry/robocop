@@ -1,5 +1,6 @@
 import rclpy
 from typing import Dict
+from threading import Event
 from rclpy.node import Node
 from rclpy.executors import SingleThreadedExecutor
 from rclpy.qos import qos_profile_sensor_data
@@ -34,10 +35,11 @@ class SubNode(Node):
 
 
 class RosNode():
-    def __init__(self, pub_topic: str, topic_msg_map: Dict[str, type], pub_rate_sec: float):
+    def __init__(self, pub_topic: str, topic_msg_map: Dict[str, type], pub_rate_sec: float, save_event: Event|None=None):
         rclpy.init()
         self.executor = SingleThreadedExecutor()
         self.executor.add_node(PubNode(pub_topic, 10, pub_rate_sec))
+        self.save_event = save_event if save_event is not None else Event();
 
         self.values = {}
         for topic, MsgType in topic_msg_map.items():
@@ -51,7 +53,12 @@ class RosNode():
             vals = []
 
     def start(self):
-        self.executor.spin()
+        while True:
+            self.save_event.set()
+            while self.save_event.is_set():
+                self.executor.spin_once()
+
+            self.save_data()
 
     def stop(self):
         self.executor.shutdown()
