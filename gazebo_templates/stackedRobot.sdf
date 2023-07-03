@@ -1,4 +1,5 @@
    <model name="robot">
+        <pose>-9 0 0.181 0 0 0</pose>
         <enable_wind>0</enable_wind>
         <static>0</static>
         <link name="base_link">
