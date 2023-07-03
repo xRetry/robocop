@@ -6,6 +6,7 @@ from world_generation import generate_world, read_file, generate_tiles, generate
 import subprocess
 from threading import Thread, Event
 import time
+from ros2 import RosNode
 
 
 def create_world():
@@ -28,13 +29,18 @@ def exec_command(command: str):
 
 
 def run_ros2_node(shared_event: Event):
-    while True:
-        i = 0
-        shared_event.set()
-        while shared_event.is_set():
-            time.sleep(1)
-            i += 1
-        print("node:", i)
+    topics = dict()
+    pub_topic = "topic"
+    node = RosNode(pub_topic, topics, 1, shared_event)
+    node.start()
+
+    #while True:
+    #    i = 0
+    #    shared_event.set()
+    #    while shared_event.is_set():
+    #        time.sleep(1)
+    #        i += 1
+    #    print("node:", i)
 
 
 def main():
