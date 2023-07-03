@@ -1,0 +1,48 @@
+  <model name='plank_right'>
+    <pose>0 -6.5 0 0 0 0</pose>
+    <link name='link_1'>
+      <pose>0 0 0 0 -0 0</pose>
+      <inertial>
+        <mass>54.0001</mass>
+        <inertia>
+          <ixx>364.546</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>1800.06</iyy>
+          <iyz>0</iyz>
+          <izz>2164.51</izz>
+        </inertia>
+        <pose>0 0 0 0 -0 0</pose>
+      </inertial>
+      <visual name='visual'>
+        <geometry>
+          <box>
+            <size>20 9 0.1</size>
+          </box>
+        </geometry>
+        <material>
+          <ambient>1 1 0.3 0.5</ambient>
+          <diffuse>1 1 0.3 0.5</diffuse>
+          <specular>1 1 0.3 0.5</specular>
+        </material>
+      </visual>
+      <collision name='collision'>
+        <geometry>
+          <box>
+            <size>20 9 0.1</size>
+          </box>
+        </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>1</mu>
+              <mu2>1</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <enable_wind>false</enable_wind>
+    </link>
+    <static>0</static>
+    <allow_auto_disable>1</allow_auto_disable>
+  </model>

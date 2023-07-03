@@ -50,6 +50,9 @@ def generate_tiles(template_path: str) -> str:
     return full_string
 
 
+def generate_planks(template_path: str) -> str:
+    pass
+
 def generate_objects(template_path: str) -> str:
     full_string = ""
     template_string = read_file(template_path)

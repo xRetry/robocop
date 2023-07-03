@@ -39,7 +39,6 @@
                 <mu2>MM2</mu2>
               </ode>
             </friction>
-            <bounce/>
             <contact/>
           </surface>
         </collision>
