@@ -108,12 +108,13 @@ def generate_objects(template_path: str) -> str:
 
 def main():
     generate_world(
-        main_file="gazebo_templates/main_base.sdf",
+        main_file="gazebo_templates/main_base1.sdf",
         output_path="gazebo_generated/generated_world.sdf",
         replace_map={
-            "[[ROBOT]]": read_file("gazebo_templates/stackedRobot.sdf"),
-            "[[TILES]]": generate_tiles("gazebo_templates/tile_base.sdf"),
-            "[[CYLINDERS]]": generate_objects("gazebo_templates/cylinder_base.sdf")
+            "[[TILES]]": generate_tiles("gazebo_templates/tile_base1.sdf"),
+            "[[CYLINDERS]]": generate_objects("gazebo_templates/cylinder_base.sdf"),
+            "[[ROBOT]]": read_file("gazebo_templates/simpleRobot.sdf")
+            
         },
     )
 
