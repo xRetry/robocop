@@ -196,8 +196,8 @@
                 <surface>
                   <friction>
                     <ode>
-                      <mu>1</mu>
-                      <mu2>1</mu2>
+                      <mu>6.0</mu>
+                      <mu2>15.0</mu2>
                     </ode>
                   </friction>
                   <contact/>
@@ -229,9 +229,9 @@
                   </box>
                 </geometry>
                 <material>
-                  <ambient>0.9 0.1 0 0.8</ambient>
-                  <diffuse>0.9 0.1 0 0.8</diffuse>
-                  <specular>0.9 0.1 0 0.8</specular>
+                  <ambient>0.1 0.9 0 0.8</ambient>
+                  <diffuse>0.1 0.9 0 0.8</diffuse>
+                  <specular>0.1 0.9 0 0.8</specular>
                 </material>
               </visual>
               <collision name='collision'>
@@ -243,8 +243,8 @@
                 <surface>
                   <friction>
                     <ode>
-                      <mu>1</mu>
-                      <mu2>1</mu2>
+                      <mu>81.0</mu>
+                      <mu2>77.0</mu2>
                     </ode>
                   </friction>
                   <contact/>
@@ -276,9 +276,9 @@
                   </box>
                 </geometry>
                 <material>
-                  <ambient>0.9 0.1 0 0.8</ambient>
-                  <diffuse>0.9 0.1 0 0.8</diffuse>
-                  <specular>0.9 0.1 0 0.8</specular>
+                  <ambient>0.1 0.9 0 0.8</ambient>
+                  <diffuse>0.1 0.9 0 0.8</diffuse>
+                  <specular>0.1 0.9 0 0.8</specular>
                 </material>
               </visual>
               <collision name='collision'>
@@ -290,8 +290,8 @@
                 <surface>
                   <friction>
                     <ode>
-                      <mu>1</mu>
-                      <mu2>1</mu2>
+                      <mu>64.0</mu>
+                      <mu2>84.0</mu2>
                     </ode>
                   </friction>
                   <contact/>
@@ -323,9 +323,9 @@
                   </box>
                 </geometry>
                 <material>
-                  <ambient>0.9 0.1 0 0.8</ambient>
-                  <diffuse>0.9 0.1 0 0.8</diffuse>
-                  <specular>0.9 0.1 0 0.8</specular>
+                  <ambient>0.1 0.9 0 0.8</ambient>
+                  <diffuse>0.1 0.9 0 0.8</diffuse>
+                  <specular>0.1 0.9 0 0.8</specular>
                 </material>
               </visual>
               <collision name='collision'>
@@ -337,8 +337,8 @@
                 <surface>
                   <friction>
                     <ode>
-                      <mu>1</mu>
-                      <mu2>1</mu2>
+                      <mu>68.0</mu>
+                      <mu2>60.0</mu2>
                     </ode>
                   </friction>
                   <contact/>
@@ -384,8 +384,8 @@
                 <surface>
                   <friction>
                     <ode>
-                      <mu>1</mu>
-                      <mu2>1</mu2>
+                      <mu>34.0</mu>
+                      <mu2>34.0</mu2>
                     </ode>
                   </friction>
                   <contact/>
@@ -417,9 +417,9 @@
                   </box>
                 </geometry>
                 <material>
-                  <ambient>0.9 0.1 0 0.8</ambient>
-                  <diffuse>0.9 0.1 0 0.8</diffuse>
-                  <specular>0.9 0.1 0 0.8</specular>
+                  <ambient>0.1 0.9 0 0.8</ambient>
+                  <diffuse>0.1 0.9 0 0.8</diffuse>
+                  <specular>0.1 0.9 0 0.8</specular>
                 </material>
               </visual>
               <collision name='collision'>
@@ -431,8 +431,8 @@
                 <surface>
                   <friction>
                     <ode>
-                      <mu>1</mu>
-                      <mu2>1</mu2>
+                      <mu>95.0</mu>
+                      <mu2>74.0</mu2>
                     </ode>
                   </friction>
                   <contact/>
@@ -464,9 +464,9 @@
                   </box>
                 </geometry>
                 <material>
-                  <ambient>0.9 0.1 0 0.8</ambient>
-                  <diffuse>0.9 0.1 0 0.8</diffuse>
-                  <specular>0.9 0.1 0 0.8</specular>
+                  <ambient>0.1 0.9 0 0.8</ambient>
+                  <diffuse>0.1 0.9 0 0.8</diffuse>
+                  <specular>0.1 0.9 0 0.8</specular>
                 </material>
               </visual>
               <collision name='collision'>
@@ -478,8 +478,8 @@
                 <surface>
                   <friction>
                     <ode>
-                      <mu>1</mu>
-                      <mu2>1</mu2>
+                      <mu>86.0</mu>
+                      <mu2>7.000000000000001</mu2>
                     </ode>
                   </friction>
                   <contact/>
@@ -525,8 +525,8 @@
                 <surface>
                   <friction>
                     <ode>
-                      <mu>1</mu>
-                      <mu2>1</mu2>
+                      <mu>46.0</mu>
+                      <mu2>9.0</mu2>
                     </ode>
                   </friction>
                   <contact/>
@@ -558,9 +558,9 @@
                   </box>
                 </geometry>
                 <material>
-                  <ambient>0.9 0.1 0 0.8</ambient>
-                  <diffuse>0.9 0.1 0 0.8</diffuse>
-                  <specular>0.9 0.1 0 0.8</specular>
+                  <ambient>0.1 0.9 0 0.8</ambient>
+                  <diffuse>0.1 0.9 0 0.8</diffuse>
+                  <specular>0.1 0.9 0 0.8</specular>
                 </material>
               </visual>
               <collision name='collision'>
@@ -572,8 +572,8 @@
                 <surface>
                   <friction>
                     <ode>
-                      <mu>1</mu>
-                      <mu2>1</mu2>
+                      <mu>76.0</mu>
+                      <mu2>69.0</mu2>
                     </ode>
                   </friction>
                   <contact/>
@@ -619,8 +619,8 @@
                 <surface>
                   <friction>
                     <ode>
-                      <mu>1</mu>
-                      <mu2>1</mu2>
+                      <mu>34.0</mu>
+                      <mu2>4.0</mu2>
                     </ode>
                   </friction>
                   <contact/>
@@ -666,8 +666,8 @@
                 <surface>
                   <friction>
                     <ode>
-                      <mu>1</mu>
-                      <mu2>1</mu2>
+                      <mu>7.000000000000001</mu>
+                      <mu2>57.99999999999999</mu2>
                     </ode>
                   </friction>
                   <contact/>
@@ -713,8 +713,8 @@
                 <surface>
                   <friction>
                     <ode>
-                      <mu>1</mu>
-                      <mu2>1</mu2>
+                      <mu>46.0</mu>
+                      <mu2>31.0</mu2>
                     </ode>
                   </friction>
                   <contact/>
@@ -746,9 +746,9 @@
                   </box>
                 </geometry>
                 <material>
-                  <ambient>0.9 0.1 0 0.8</ambient>
-                  <diffuse>0.9 0.1 0 0.8</diffuse>
-                  <specular>0.9 0.1 0 0.8</specular>
+                  <ambient>0.1 0.9 0 0.8</ambient>
+                  <diffuse>0.1 0.9 0 0.8</diffuse>
+                  <specular>0.1 0.9 0 0.8</specular>
                 </material>
               </visual>
               <collision name='collision'>
@@ -760,8 +760,8 @@
                 <surface>
                   <friction>
                     <ode>
-                      <mu>1</mu>
-                      <mu2>1</mu2>
+                      <mu>50.0</mu>
+                      <mu2>78.0</mu2>
                     </ode>
                   </friction>
                   <contact/>
@@ -793,9 +793,9 @@
                   </box>
                 </geometry>
                 <material>
-                  <ambient>0.9 0.1 0 0.8</ambient>
-                  <diffuse>0.9 0.1 0 0.8</diffuse>
-                  <specular>0.9 0.1 0 0.8</specular>
+                  <ambient>0.1 0.9 0 0.8</ambient>
+                  <diffuse>0.1 0.9 0 0.8</diffuse>
+                  <specular>0.1 0.9 0 0.8</specular>
                 </material>
               </visual>
               <collision name='collision'>
@@ -807,8 +807,8 @@
                 <surface>
                   <friction>
                     <ode>
-                      <mu>1</mu>
-                      <mu2>1</mu2>
+                      <mu>50.0</mu>
+                      <mu2>52.0</mu2>
                     </ode>
                   </friction>
                   <contact/>
@@ -854,8 +854,8 @@
                 <surface>
                   <friction>
                     <ode>
-                      <mu>1</mu>
-                      <mu2>1</mu2>
+                      <mu>31.0</mu>
+                      <mu2>8.0</mu2>
                     </ode>
                   </friction>
                   <contact/>
@@ -887,9 +887,9 @@
                   </box>
                 </geometry>
                 <material>
-                  <ambient>0.9 0.1 0 0.8</ambient>
-                  <diffuse>0.9 0.1 0 0.8</diffuse>
-                  <specular>0.9 0.1 0 0.8</specular>
+                  <ambient>0.1 0.9 0 0.8</ambient>
+                  <diffuse>0.1 0.9 0 0.8</diffuse>
+                  <specular>0.1 0.9 0 0.8</specular>
                 </material>
               </visual>
               <collision name='collision'>
@@ -901,8 +901,8 @@
                 <surface>
                   <friction>
                     <ode>
-                      <mu>1</mu>
-                      <mu2>1</mu2>
+                      <mu>65.0</mu>
+                      <mu2>21.0</mu2>
                     </ode>
                   </friction>
                   <contact/>
@@ -934,9 +934,9 @@
                   </box>
                 </geometry>
                 <material>
-                  <ambient>0.9 0.1 0 0.8</ambient>
-                  <diffuse>0.9 0.1 0 0.8</diffuse>
-                  <specular>0.9 0.1 0 0.8</specular>
+                  <ambient>0.1 0.9 0 0.8</ambient>
+                  <diffuse>0.1 0.9 0 0.8</diffuse>
+                  <specular>0.1 0.9 0 0.8</specular>
                 </material>
               </visual>
               <collision name='collision'>
@@ -948,8 +948,8 @@
                 <surface>
                   <friction>
                     <ode>
-                      <mu>1</mu>
-                      <mu2>1</mu2>
+                      <mu>69.0</mu>
+                      <mu2>34.0</mu2>
                     </ode>
                   </friction>
                   <contact/>
@@ -995,8 +995,8 @@
                 <surface>
                   <friction>
                     <ode>
-                      <mu>1</mu>
-                      <mu2>1</mu2>
+                      <mu>3.0</mu>
+                      <mu2>52.0</mu2>
                     </ode>
                   </friction>
                   <contact/>
@@ -1042,8 +1042,8 @@
                 <surface>
                   <friction>
                     <ode>
-                      <mu>1</mu>
-                      <mu2>1</mu2>
+                      <mu>18.0</mu>
+                      <mu2>70.0</mu2>
                     </ode>
                   </friction>
                   <contact/>
@@ -1075,9 +1075,9 @@
                   </box>
                 </geometry>
                 <material>
-                  <ambient>0.9 0.1 0 0.8</ambient>
-                  <diffuse>0.9 0.1 0 0.8</diffuse>
-                  <specular>0.9 0.1 0 0.8</specular>
+                  <ambient>0.1 0.9 0 0.8</ambient>
+                  <diffuse>0.1 0.9 0 0.8</diffuse>
+                  <specular>0.1 0.9 0 0.8</specular>
                 </material>
               </visual>
               <collision name='collision'>
@@ -1089,8 +1089,8 @@
                 <surface>
                   <friction>
                     <ode>
-                      <mu>1</mu>
-                      <mu2>1</mu2>
+                      <mu>93.0</mu>
+                      <mu2>46.0</mu2>
                     </ode>
                   </friction>
                   <contact/>
@@ -1103,7 +1103,7 @@
 
 
         <model name='cyl_0'>
-      <pose>-0.27 -5.6 0.5 0 -0 0</pose>
+      <pose>-0.59 -5.42 0.5 0 -0 0</pose>
       <link name='cylinder_link'>
         <inertial>
           <inertia>
@@ -1120,8 +1120,8 @@
         <collision name='cylinder_collision'>
           <geometry>
             <cylinder>
-              <radius>0.39</radius>
-              <length>0.59</length>
+              <radius>0.25</radius>
+              <length>0.45</length>
             </cylinder>
           </geometry>
           <surface>
@@ -1135,106 +1135,8 @@
         <visual name='cylinder_visual'>
           <geometry>
             <cylinder>
-              <radius>0.39</radius>
-              <length>0.59</length>
-            </cylinder>
-          </geometry>
-          <material>
-            <ambient>0 1 0 1</ambient>
-            <diffuse>0 1 0 1</diffuse>
-            <specular>0 1 0 1</specular>
-          </material>
-        </visual>
-        <pose>0 0 0 0 -0 0</pose>
-        <enable_wind>false</enable_wind>
-      </link>
-      <static>false</static>
-      <self_collide>false</self_collide>
-    </model>
-    <model name='cyl_1'>
-      <pose>9.12 4.68 0.5 0 -0 0</pose>
-      <link name='cylinder_link'>
-        <inertial>
-          <inertia>
-            <ixx>0.14580000000000001</ixx>
-            <ixy>0</ixy>
-            <ixz>0</ixz>
-            <iyy>0.14580000000000001</iyy>
-            <iyz>0</iyz>
-            <izz>0.125</izz>
-          </inertia>
-          <mass>1</mass>
-          <pose>0 0 0 0 -0 0</pose>
-        </inertial>
-        <collision name='cylinder_collision'>
-          <geometry>
-            <cylinder>
-              <radius>0.95</radius>
-              <length>0.97</length>
-            </cylinder>
-          </geometry>
-          <surface>
-            <friction>
-              <ode/>
-            </friction>
-            <bounce/>
-            <contact/>
-          </surface>
-        </collision>
-        <visual name='cylinder_visual'>
-          <geometry>
-            <cylinder>
-              <radius>0.95</radius>
-              <length>0.97</length>
-            </cylinder>
-          </geometry>
-          <material>
-            <ambient>0 1 0 1</ambient>
-            <diffuse>0 1 0 1</diffuse>
-            <specular>0 1 0 1</specular>
-          </material>
-        </visual>
-        <pose>0 0 0 0 -0 0</pose>
-        <enable_wind>false</enable_wind>
-      </link>
-      <static>false</static>
-      <self_collide>false</self_collide>
-    </model>
-    <model name='cyl_2'>
-      <pose>5.85 5.4 0.5 0 -0 0</pose>
-      <link name='cylinder_link'>
-        <inertial>
-          <inertia>
-            <ixx>0.14580000000000001</ixx>
-            <ixy>0</ixy>
-            <ixz>0</ixz>
-            <iyy>0.14580000000000001</iyy>
-            <iyz>0</iyz>
-            <izz>0.125</izz>
-          </inertia>
-          <mass>1</mass>
-          <pose>0 0 0 0 -0 0</pose>
-        </inertial>
-        <collision name='cylinder_collision'>
-          <geometry>
-            <cylinder>
-              <radius>0.78</radius>
-              <length>2.98</length>
-            </cylinder>
-          </geometry>
-          <surface>
-            <friction>
-              <ode/>
-            </friction>
-            <bounce/>
-            <contact/>
-          </surface>
-        </collision>
-        <visual name='cylinder_visual'>
-          <geometry>
-            <cylinder>
-              <radius>0.78</radius>
-              <length>2.98</length>
+              <radius>0.25</radius>
+              <length>0.45</length>
             </cylinder>
           </geometry>
           <material>
@@ -1249,8 +1151,8 @@
       <static>false</static>
       <self_collide>false</self_collide>
     </model>
-    <model name='cyl_3'>
-      <pose>5.96 2.87 0.5 0 -0 0</pose>
+    <model name='cyl_1'>
+      <pose>4.72 -3.89 0.5 0 -0 0</pose>
       <link name='cylinder_link'>
         <inertial>
           <inertia>
@@ -1267,8 +1169,8 @@
         <collision name='cylinder_collision'>
           <geometry>
             <cylinder>
-              <radius>0.33</radius>
-              <length>1.87</length>
+              <radius>1.0</radius>
+              <length>1.2</length>
             </cylinder>
           </geometry>
           <surface>
@@ -1282,8 +1184,106 @@
         <visual name='cylinder_visual'>
           <geometry>
             <cylinder>
-              <radius>0.33</radius>
-              <length>1.87</length>
+              <radius>1.0</radius>
+              <length>1.2</length>
+            </cylinder>
+          </geometry>
+          <material>
+            <ambient>0 0 1 1</ambient>
+            <diffuse>0 0 1 1</diffuse>
+            <specular>0 0 1 1</specular>
+          </material>
+        </visual>
+        <pose>0 0 0 0 -0 0</pose>
+        <enable_wind>false</enable_wind>
+      </link>
+      <static>false</static>
+      <self_collide>false</self_collide>
+    </model>
+    <model name='cyl_2'>
+      <pose>6.99 3.73 0.5 0 -0 0</pose>
+      <link name='cylinder_link'>
+        <inertial>
+          <inertia>
+            <ixx>0.14580000000000001</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.14580000000000001</iyy>
+            <iyz>0</iyz>
+            <izz>0.125</izz>
+          </inertia>
+          <mass>1</mass>
+          <pose>0 0 0 0 -0 0</pose>
+        </inertial>
+        <collision name='cylinder_collision'>
+          <geometry>
+            <cylinder>
+              <radius>0.28</radius>
+              <length>2.58</length>
+            </cylinder>
+          </geometry>
+          <surface>
+            <friction>
+              <ode/>
+            </friction>
+            <bounce/>
+            <contact/>
+          </surface>
+        </collision>
+        <visual name='cylinder_visual'>
+          <geometry>
+            <cylinder>
+              <radius>0.28</radius>
+              <length>2.58</length>
+            </cylinder>
+          </geometry>
+          <material>
+            <ambient>0 0 1 1</ambient>
+            <diffuse>0 0 1 1</diffuse>
+            <specular>0 0 1 1</specular>
+          </material>
+        </visual>
+        <pose>0 0 0 0 -0 0</pose>
+        <enable_wind>false</enable_wind>
+      </link>
+      <static>false</static>
+      <self_collide>false</self_collide>
+    </model>
+    <model name='cyl_3'>
+      <pose>-2.85 -6.7 0.5 0 -0 0</pose>
+      <link name='cylinder_link'>
+        <inertial>
+          <inertia>
+            <ixx>0.14580000000000001</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.14580000000000001</iyy>
+            <iyz>0</iyz>
+            <izz>0.125</izz>
+          </inertia>
+          <mass>1</mass>
+          <pose>0 0 0 0 -0 0</pose>
+        </inertial>
+        <collision name='cylinder_collision'>
+          <geometry>
+            <cylinder>
+              <radius>0.9</radius>
+              <length>1.62</length>
+            </cylinder>
+          </geometry>
+          <surface>
+            <friction>
+              <ode/>
+            </friction>
+            <bounce/>
+            <contact/>
+          </surface>
+        </collision>
+        <visual name='cylinder_visual'>
+          <geometry>
+            <cylinder>
+              <radius>0.9</radius>
+              <length>1.62</length>
             </cylinder>
           </geometry>
           <material>
@@ -1299,7 +1299,7 @@
       <self_collide>false</self_collide>
     </model>
     <model name='cyl_4'>
-      <pose>7.15 3.12 0.5 0 -0 0</pose>
+      <pose>2.4 5.05 0.5 0 -0 0</pose>
       <link name='cylinder_link'>
         <inertial>
           <inertia>
@@ -1316,8 +1316,8 @@
         <collision name='cylinder_collision'>
           <geometry>
             <cylinder>
-              <radius>0.75</radius>
-              <length>2.86</length>
+              <radius>0.69</radius>
+              <length>0.65</length>
             </cylinder>
           </geometry>
           <surface>
@@ -1331,8 +1331,8 @@
         <visual name='cylinder_visual'>
           <geometry>
             <cylinder>
-              <radius>0.75</radius>
-              <length>2.86</length>
+              <radius>0.69</radius>
+              <length>0.65</length>
             </cylinder>
           </geometry>
           <material>
@@ -1348,7 +1348,7 @@
       <self_collide>false</self_collide>
     </model>
     <model name='cyl_5'>
-      <pose>2.4 3.59 0.5 0 -0 0</pose>
+      <pose>1.53 6.46 0.5 0 -0 0</pose>
       <link name='cylinder_link'>
         <inertial>
           <inertia>
@@ -1365,8 +1365,8 @@
         <collision name='cylinder_collision'>
           <geometry>
             <cylinder>
-              <radius>0.32</radius>
-              <length>1.85</length>
+              <radius>0.67</radius>
+              <length>0.76</length>
             </cylinder>
           </geometry>
           <surface>
@@ -1380,8 +1380,8 @@
         <visual name='cylinder_visual'>
           <geometry>
             <cylinder>
-              <radius>0.32</radius>
-              <length>1.85</length>
+              <radius>0.67</radius>
+              <length>0.76</length>
             </cylinder>
           </geometry>
           <material>
@@ -1397,7 +1397,7 @@
       <self_collide>false</self_collide>
     </model>
     <model name='cyl_6'>
-      <pose>9.15 5.67 0.5 0 -0 0</pose>
+      <pose>2.68 -2.97 0.5 0 -0 0</pose>
       <link name='cylinder_link'>
         <inertial>
           <inertia>
@@ -1414,8 +1414,8 @@
         <collision name='cylinder_collision'>
           <geometry>
             <cylinder>
-              <radius>0.34</radius>
-              <length>0.48</length>
+              <radius>0.76</radius>
+              <length>0.4</length>
             </cylinder>
           </geometry>
           <surface>
@@ -1429,14 +1429,14 @@
         <visual name='cylinder_visual'>
           <geometry>
             <cylinder>
-              <radius>0.34</radius>
-              <length>0.48</length>
+              <radius>0.76</radius>
+              <length>0.4</length>
             </cylinder>
           </geometry>
           <material>
-            <ambient>0 0 1 1</ambient>
-            <diffuse>0 0 1 1</diffuse>
-            <specular>0 0 1 1</specular>
+            <ambient>1 0 0 1</ambient>
+            <diffuse>1 0 0 1</diffuse>
+            <specular>1 0 0 1</specular>
           </material>
         </visual>
         <pose>0 0 0 0 -0 0</pose>
@@ -1446,7 +1446,7 @@
       <self_collide>false</self_collide>
     </model>
     <model name='cyl_7'>
-      <pose>-0.31 3.14 0.5 0 -0 0</pose>
+      <pose>6.52 -2.65 0.5 0 -0 0</pose>
       <link name='cylinder_link'>
         <inertial>
           <inertia>
@@ -1463,8 +1463,8 @@
         <collision name='cylinder_collision'>
           <geometry>
             <cylinder>
-              <radius>0.37</radius>
-              <length>1.04</length>
+              <radius>0.46</radius>
+              <length>0.96</length>
             </cylinder>
           </geometry>
           <surface>
@@ -1478,8 +1478,8 @@
         <visual name='cylinder_visual'>
           <geometry>
             <cylinder>
-              <radius>0.37</radius>
-              <length>1.04</length>
+              <radius>0.46</radius>
+              <length>0.96</length>
             </cylinder>
           </geometry>
           <material>
@@ -1495,7 +1495,7 @@
       <self_collide>false</self_collide>
     </model>
     <model name='cyl_8'>
-      <pose>6.9 -5.87 0.5 0 -0 0</pose>
+      <pose>-2.78 -5.66 0.5 0 -0 0</pose>
       <link name='cylinder_link'>
         <inertial>
           <inertia>
@@ -1512,8 +1512,8 @@
         <collision name='cylinder_collision'>
           <geometry>
             <cylinder>
-              <radius>0.4</radius>
-              <length>0.62</length>
+              <radius>0.66</radius>
+              <length>1.74</length>
             </cylinder>
           </geometry>
           <surface>
@@ -1527,8 +1527,8 @@
         <visual name='cylinder_visual'>
           <geometry>
             <cylinder>
-              <radius>0.4</radius>
-              <length>0.62</length>
+              <radius>0.66</radius>
+              <length>1.74</length>
             </cylinder>
           </geometry>
           <material>
@@ -1544,7 +1544,7 @@
       <self_collide>false</self_collide>
     </model>
     <model name='cyl_9'>
-      <pose>9.93 -5.56 0.5 0 -0 0</pose>
+      <pose>7.08 -5.75 0.5 0 -0 0</pose>
       <link name='cylinder_link'>
         <inertial>
           <inertia>
@@ -1561,8 +1561,8 @@
         <collision name='cylinder_collision'>
           <geometry>
             <cylinder>
-              <radius>0.92</radius>
-              <length>1.93</length>
+              <radius>0.26</radius>
+              <length>1.13</length>
             </cylinder>
           </geometry>
           <surface>
@@ -1576,8 +1576,8 @@
         <visual name='cylinder_visual'>
           <geometry>
             <cylinder>
-              <radius>0.92</radius>
-              <length>1.93</length>
+              <radius>0.26</radius>
+              <length>1.13</length>
             </cylinder>
           </geometry>
           <material>
@@ -1593,7 +1593,7 @@
       <self_collide>false</self_collide>
     </model>
     <model name='cyl_10'>
-      <pose>4.99 4.15 0.5 0 -0 0</pose>
+      <pose>9.11 2.61 0.5 0 -0 0</pose>
       <link name='cylinder_link'>
         <inertial>
           <inertia>
@@ -1610,8 +1610,8 @@
         <collision name='cylinder_collision'>
           <geometry>
             <cylinder>
-              <radius>0.28</radius>
-              <length>1.71</length>
+              <radius>0.4</radius>
+              <length>0.8</length>
             </cylinder>
           </geometry>
           <surface>
@@ -1625,8 +1625,8 @@
         <visual name='cylinder_visual'>
           <geometry>
             <cylinder>
-              <radius>0.28</radius>
-              <length>1.71</length>
+              <radius>0.4</radius>
+              <length>0.8</length>
             </cylinder>
           </geometry>
           <material>
@@ -1642,7 +1642,7 @@
       <self_collide>false</self_collide>
     </model>
     <model name='cyl_11'>
-      <pose>-2.17 -3.26 0.5 0 -0 0</pose>
+      <pose>6.83 -3.31 0.5 0 -0 0</pose>
       <link name='cylinder_link'>
         <inertial>
           <inertia>
@@ -1659,8 +1659,8 @@
         <collision name='cylinder_collision'>
           <geometry>
             <cylinder>
-              <radius>0.2</radius>
-              <length>2.36</length>
+              <radius>0.42</radius>
+              <length>0.83</length>
             </cylinder>
           </geometry>
           <surface>
@@ -1674,8 +1674,106 @@
         <visual name='cylinder_visual'>
           <geometry>
             <cylinder>
-              <radius>0.2</radius>
-              <length>2.36</length>
+              <radius>0.42</radius>
+              <length>0.83</length>
+            </cylinder>
+          </geometry>
+          <material>
+            <ambient>0 0 1 1</ambient>
+            <diffuse>0 0 1 1</diffuse>
+            <specular>0 0 1 1</specular>
+          </material>
+        </visual>
+        <pose>0 0 0 0 -0 0</pose>
+        <enable_wind>false</enable_wind>
+      </link>
+      <static>false</static>
+      <self_collide>false</self_collide>
+    </model>
+    <model name='cyl_12'>
+      <pose>9.79 -2.53 0.5 0 -0 0</pose>
+      <link name='cylinder_link'>
+        <inertial>
+          <inertia>
+            <ixx>0.14580000000000001</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.14580000000000001</iyy>
+            <iyz>0</iyz>
+            <izz>0.125</izz>
+          </inertia>
+          <mass>1</mass>
+          <pose>0 0 0 0 -0 0</pose>
+        </inertial>
+        <collision name='cylinder_collision'>
+          <geometry>
+            <cylinder>
+              <radius>0.52</radius>
+              <length>0.44</length>
+            </cylinder>
+          </geometry>
+          <surface>
+            <friction>
+              <ode/>
+            </friction>
+            <bounce/>
+            <contact/>
+          </surface>
+        </collision>
+        <visual name='cylinder_visual'>
+          <geometry>
+            <cylinder>
+              <radius>0.52</radius>
+              <length>0.44</length>
+            </cylinder>
+          </geometry>
+          <material>
+            <ambient>0 0 1 1</ambient>
+            <diffuse>0 0 1 1</diffuse>
+            <specular>0 0 1 1</specular>
+          </material>
+        </visual>
+        <pose>0 0 0 0 -0 0</pose>
+        <enable_wind>false</enable_wind>
+      </link>
+      <static>false</static>
+      <self_collide>false</self_collide>
+    </model>
+    <model name='cyl_13'>
+      <pose>1.7 3.34 0.5 0 -0 0</pose>
+      <link name='cylinder_link'>
+        <inertial>
+          <inertia>
+            <ixx>0.14580000000000001</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.14580000000000001</iyy>
+            <iyz>0</iyz>
+            <izz>0.125</izz>
+          </inertia>
+          <mass>1</mass>
+          <pose>0 0 0 0 -0 0</pose>
+        </inertial>
+        <collision name='cylinder_collision'>
+          <geometry>
+            <cylinder>
+              <radius>0.71</radius>
+              <length>1.06</length>
+            </cylinder>
+          </geometry>
+          <surface>
+            <friction>
+              <ode/>
+            </friction>
+            <bounce/>
+            <contact/>
+          </surface>
+        </collision>
+        <visual name='cylinder_visual'>
+          <geometry>
+            <cylinder>
+              <radius>0.71</radius>
+              <length>1.06</length>
             </cylinder>
           </geometry>
           <material>
@@ -1690,106 +1788,8 @@
       <static>false</static>
       <self_collide>false</self_collide>
     </model>
-    <model name='cyl_12'>
-      <pose>8.04 -2.04 0.5 0 -0 0</pose>
-      <link name='cylinder_link'>
-        <inertial>
-          <inertia>
-            <ixx>0.14580000000000001</ixx>
-            <ixy>0</ixy>
-            <ixz>0</ixz>
-            <iyy>0.14580000000000001</iyy>
-            <iyz>0</iyz>
-            <izz>0.125</izz>
-          </inertia>
-          <mass>1</mass>
-          <pose>0 0 0 0 -0 0</pose>
-        </inertial>
-        <collision name='cylinder_collision'>
-          <geometry>
-            <cylinder>
-              <radius>0.24</radius>
-              <length>0.83</length>
-            </cylinder>
-          </geometry>
-          <surface>
-            <friction>
-              <ode/>
-            </friction>
-            <bounce/>
-            <contact/>
-          </surface>
-        </collision>
-        <visual name='cylinder_visual'>
-          <geometry>
-            <cylinder>
-              <radius>0.24</radius>
-              <length>0.83</length>
-            </cylinder>
-          </geometry>
-          <material>
-            <ambient>0 1 0 1</ambient>
-            <diffuse>0 1 0 1</diffuse>
-            <specular>0 1 0 1</specular>
-          </material>
-        </visual>
-        <pose>0 0 0 0 -0 0</pose>
-        <enable_wind>false</enable_wind>
-      </link>
-      <static>false</static>
-      <self_collide>false</self_collide>
-    </model>
-    <model name='cyl_13'>
-      <pose>-2.9 -3.89 0.5 0 -0 0</pose>
-      <link name='cylinder_link'>
-        <inertial>
-          <inertia>
-            <ixx>0.14580000000000001</ixx>
-            <ixy>0</ixy>
-            <ixz>0</ixz>
-            <iyy>0.14580000000000001</iyy>
-            <iyz>0</iyz>
-            <izz>0.125</izz>
-          </inertia>
-          <mass>1</mass>
-          <pose>0 0 0 0 -0 0</pose>
-        </inertial>
-        <collision name='cylinder_collision'>
-          <geometry>
-            <cylinder>
-              <radius>0.49</radius>
-              <length>2.27</length>
-            </cylinder>
-          </geometry>
-          <surface>
-            <friction>
-              <ode/>
-            </friction>
-            <bounce/>
-            <contact/>
-          </surface>
-        </collision>
-        <visual name='cylinder_visual'>
-          <geometry>
-            <cylinder>
-              <radius>0.49</radius>
-              <length>2.27</length>
-            </cylinder>
-          </geometry>
-          <material>
-            <ambient>0 1 0 1</ambient>
-            <diffuse>0 1 0 1</diffuse>
-            <specular>0 1 0 1</specular>
-          </material>
-        </visual>
-        <pose>0 0 0 0 -0 0</pose>
-        <enable_wind>false</enable_wind>
-      </link>
-      <static>false</static>
-      <self_collide>false</self_collide>
-    </model>
     <model name='cyl_14'>
-      <pose>2.14 4.51 0.5 0 -0 0</pose>
+      <pose>8.39 -5.37 0.5 0 -0 0</pose>
       <link name='cylinder_link'>
         <inertial>
           <inertia>
@@ -1806,8 +1806,8 @@
         <collision name='cylinder_collision'>
           <geometry>
             <cylinder>
-              <radius>0.64</radius>
-              <length>0.31</length>
+              <radius>0.99</radius>
+              <length>1.56</length>
             </cylinder>
           </geometry>
           <surface>
@@ -1821,8 +1821,8 @@
         <visual name='cylinder_visual'>
           <geometry>
             <cylinder>
-              <radius>0.64</radius>
-              <length>0.31</length>
+              <radius>0.99</radius>
+              <length>1.56</length>
             </cylinder>
           </geometry>
           <material>
@@ -1838,7 +1838,7 @@
       <self_collide>false</self_collide>
     </model>
     <model name='cyl_15'>
-      <pose>7.41 5.57 0.5 0 -0 0</pose>
+      <pose>0.93 3.9 0.5 0 -0 0</pose>
       <link name='cylinder_link'>
         <inertial>
           <inertia>
@@ -1855,8 +1855,8 @@
         <collision name='cylinder_collision'>
           <geometry>
             <cylinder>
-              <radius>0.34</radius>
-              <length>2.5</length>
+              <radius>0.91</radius>
+              <length>0.58</length>
             </cylinder>
           </geometry>
           <surface>
@@ -1870,14 +1870,14 @@
         <visual name='cylinder_visual'>
           <geometry>
             <cylinder>
-              <radius>0.34</radius>
-              <length>2.5</length>
+              <radius>0.91</radius>
+              <length>0.58</length>
             </cylinder>
           </geometry>
           <material>
-            <ambient>1 0 0 1</ambient>
-            <diffuse>1 0 0 1</diffuse>
-            <specular>1 0 0 1</specular>
+            <ambient>0 0 1 1</ambient>
+            <diffuse>0 0 1 1</diffuse>
+            <specular>0 0 1 1</specular>
           </material>
         </visual>
         <pose>0 0 0 0 -0 0</pose>
