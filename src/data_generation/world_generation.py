@@ -31,8 +31,10 @@ def generate_tiles(template_path: str) -> str:
         for j in range(4,6):
             mname = "tile_"+str(i-5)+"_"+str(j-5)
             pos = str(-9+2*i)+" "+str(-9+2*j)+" 0 0 0 0"           
-            m1= str(round(random.random(),2)*100)
-            m2 = str(round(random.random(),2)*100)
+            m1=str(1)
+            #m1= str(round(random.random(),2)*100)
+            m2=str(1)
+            #m2 = str(round(random.random(),2)*100)
 
             if(float(m1)<50):
                 color ="0.9 0.1 0"
@@ -111,9 +113,9 @@ def main():
         main_file="gazebo_templates/main_base1.sdf",
         output_path="gazebo_generated/generated_world.sdf",
         replace_map={
-            "[[TILES]]": generate_tiles("gazebo_templates/tile_base1.sdf"),
+            "[[TILES]]": generate_tiles("gazebo_templates/tile_base.sdf"),
             "[[CYLINDERS]]": generate_objects("gazebo_templates/cylinder_base.sdf"),
-            "[[ROBOT]]": read_file("gazebo_templates/simpleRobot.sdf")
+            "[[ROBOT]]": read_file("gazebo_templates/robot_stacked_drive.sdf")
             
         },
     )
