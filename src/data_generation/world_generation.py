@@ -113,10 +113,10 @@ def main():
         main_file="gazebo_templates/main_base1.sdf",
         output_path="gazebo_generated/generated_world.sdf",
         replace_map={
+            "[[STEP_SIZE]]": str(0.1),
             "[[TILES]]": generate_tiles("gazebo_templates/tile_base.sdf"),
             "[[CYLINDERS]]": generate_objects("gazebo_templates/cylinder_base.sdf"),
             "[[ROBOT]]": read_file("gazebo_templates/robot_stacked_drive.sdf")
-            
         },
     )
 
