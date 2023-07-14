@@ -5,22 +5,23 @@ from rclpy.node import Node
 from rclpy.executors import SingleThreadedExecutor
 from rclpy.qos import qos_profile_sensor_data
 from sensor_msgs.msg import Image, LaserScan
-from actuator_msgs.msg import ActuatorsAngularVelocity
+from geometry_msgs.msg import Twist
 
 
 class PubNode(Node):
     def __init__(self, topic: str, publish_value: float=10, publish_rate_sec: float=1):
         super().__init__('publisher')
-        self.publisher_ = self.create_publisher(ActuatorsAngularVelocity, topic, 10) # TODO: Set correct message type
+        self.publisher_ = self.create_publisher(Twist, topic, 10) # TODO: Set correct message type
         self.timer = self.create_timer(publish_rate_sec, self.timer_callback)
         self.publish_value = publish_value
 
     def timer_callback(self):
-        msg = ActuatorsAngularVelocity()
-        msg.velocity = self.publish_value
+        msg = Twist()
+        msg.linear.x = float(self.publish_value)
+        msg.angular.z = float(0)
 
         self.publisher_.publish(msg)
-        self.get_logger().info('Publishing: "%s"' % msg.velocity)
+        self.get_logger().info('Publishing: "%s"' % msg.linear)
 
 
 class SubNode(Node):
@@ -35,11 +36,12 @@ class SubNode(Node):
 
 
 class RosNode():
-    def __init__(self, pub_topic: str, topic_msg_map: Dict[str, type], pub_rate_sec: float, save_event: Event|None=None):
+    def __init__(self, pub_topic: str, topic_msg_map: Dict[str, type], pub_rate_sec: float, save_event: Event|None=None, stop_event: Event|None=None):
         rclpy.init()
         self.executor = SingleThreadedExecutor()
-        self.executor.add_node(PubNode(pub_topic, 10, pub_rate_sec))
+        self.executor.add_node(PubNode(pub_topic, 0.5, pub_rate_sec))
         self.save_event = save_event if save_event is not None else Event();
+        self.stop_event = stop_event if stop_event is not None else Event();
 
         self.values = {}
         for topic, MsgType in topic_msg_map.items():
@@ -53,21 +55,20 @@ class RosNode():
             vals = []
 
     def start(self):
-        while True:
+        while not self.stop_event.is_set():
             self.save_event.set()
-            while self.save_event.is_set():
+            while self.save_event.is_set() and not self.stop_event.is_set():
                 self.executor.spin_once()
 
             self.save_data()
+        self.stop()
 
     def stop(self):
         self.executor.shutdown()
 
 
-
 def main():
     pass
-
 
 if __name__ == '__main__':
     main()
