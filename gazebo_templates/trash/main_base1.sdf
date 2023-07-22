@@ -49,6 +49,15 @@
                     <size>100 100</size>
                     </plane>
                 </geometry>
+                
+                <surface>
+                  <contact>
+          	      <collide_bitmask>0x01</collide_bitmask>
+        	  </contact>   
+                </surface>
+                
+                
+                
                 <material>
                     <ambient>0.8 0.8 0.8 1</ambient>
                     <diffuse>0.8 0.8 0.8 1</diffuse>
