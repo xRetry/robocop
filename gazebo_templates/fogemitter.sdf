@@ -1,12 +1,12 @@
-    <model name="fog_generator">
-  <pose>ORIGIN</pose>  <!-- where -->
+<model name='[[OBJECT]]'>
+  <pose>[[POSITION]]</pose>  <!-- where -->
   <static>true</static>
   <link name="fog_link">
     <particle_emitter name="emitter" type="box">
       <emitting>true</emitting>
-      <size>SPAWNFIELDSIZE</size> <!-- how big is the field it spawns -->
+      <size>10 10 0.5</size> <!-- how big is the field it spawns -->
       <particle_size>1 1 1</particle_size>
-      <lifetime>LIFETIME</lifetime> <!-- how long does a particle last -->
+      <lifetime>15</lifetime> <!-- how long does a particle last -->
       <min_velocity>0.1</min_velocity>
       <max_velocity>0.2</max_velocity>
       <scale_rate>0.5</scale_rate>
@@ -16,11 +16,15 @@
         <specular>1.0 1.0 1.0</specular>
         <pbr>
           <metal>
-            <albedo_map>MESHPATHF</albedo_map> <!-- path to fog.png -->
+            <albedo_map>fog.png</albedo_map> <!-- path to fog.png -->
           </metal>
         </pbr>
       </material>
-      <color_range_image>MESHPATHFC</color_range_image>  <!-- path to ogcolors.png -->
+      <color_range_image>fogcolors.png</color_range_image>  <!-- path to ogcolors.png -->
     </particle_emitter>
   </link>
 </model>
+
+
+
+

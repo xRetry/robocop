@@ -55,9 +55,36 @@ def generate_tiles(template_path: str) -> str:
     return full_string
 
 
-def generate_planks(template_path: str) -> str:
-    pass
+def generate_smoke(template_path: str) -> str:
+    full_string = ""
+    template_string = read_file(template_path)
+    
+    to_replace =['[[OBJECT]]','[[POSITION]]']   
+    
+    for i in range (1,3):
+        obj_name = "smoker_"+str(i)
+    
+        if i%2 ==0:
+            y = random.uniform(-4,-2.5)
+        else:
+            y=random.uniform(2.5,4)
+        
+        x = random.uniform(-8,6)
+        
+        posx = str(round(x,2))
+        posy = str(round(y,2))
+        
+        position = posx+" "+posy+" 0 0 -0 0"
+        replacement =[obj_name,position]
 
+        current_template = template_string
+        for to_repl, repl in zip(to_replace, replacement):
+            current_template = current_template.replace(to_repl, repl)
+            
+        full_string += current_template
+        
+    return full_string
+    
 def generate_objects(template_path: str) -> str:
     full_string = ""
     template_string = read_file(template_path)
@@ -69,7 +96,7 @@ def generate_objects(template_path: str) -> str:
     color3 ='0 0 1 1'
     
     # generate 16 objects
-    no_obj = 20
+    no_obj = 25
     posx = -10
     increment = 20 /no_obj
     print(increment)
@@ -87,15 +114,17 @@ def generate_objects(template_path: str) -> str:
         posxx = str(round(posx,2))
    
         if i%2 ==0:
-            posy = str(-2.5)
+            y = round(random.uniform(-4,-1.5),2)
+            posy = str(y)
         else:
-            posy= str(2.5)
+            y = round(random.uniform(1.5,4),2)
+            posy = str(y)
 
         # replacement for [[RADIUS]]
-        radius = str(round(random.uniform(0.2,1),2))
+        radius = str(round(random.uniform(0.2,0.8),2))
 
         # replacement for [[LENGTH]]
-        length = round(random.uniform(0.2,3),2)
+        length = round(random.uniform(0.2,1.5),2)
         posz = str(round(length/2,2))
         length = str(length)
         
@@ -130,7 +159,8 @@ def main():
             "[[STEP_SIZE]]": str(0.1),
             "[[TILES]]": "",
             "[[CYLINDERS]]": generate_objects("gazebo_templates/cylinder_base.sdf"),
-            "[[ROBOT]]": read_file("gazebo_templates/robot_stacked_drive.sdf")
+            "[[ROBOT]]": read_file("gazebo_templates/robot_stacked_drive.sdf"),
+            "[[SMOKE]]": generate_smoke("gazebo_templates/fogemitter.sdf")
         },
 # =============================================================================
 #         replace_map={
