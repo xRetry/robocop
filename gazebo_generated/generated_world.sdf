@@ -8,6 +8,12 @@
       <real_time_update_rate>1000</real_time_update_rate>
     </physics>
 
+    <plugin
+      filename="ignition-gazebo-sensors-system"
+      name="ignition::gazebo::systems::Sensors">
+      <render_engine>ogre2</render_engine>
+    </plugin>
+
     <plugin name='ignition::gazebo::systems::Physics' filename='libignition-gazebo-physics-system.so'/>
     <plugin name='ignition::gazebo::systems::UserCommands' filename='libignition-gazebo-user-commands-system.so'/>
     <plugin name='ignition::gazebo::systems::SceneBroadcaster' filename='libignition-gazebo-scene-broadcaster-system.so'/>
@@ -801,7 +807,7 @@
 
 
         <model name='cyl_0'>
-      <pose>-9.26 -1.96 0.36 0 -0 0</pose>
+      <pose>-8.89 -2.77 0.49 0 -0 0</pose>
       <link name='cylinder_link'>
         <inertial>
           <inertia>
@@ -818,8 +824,8 @@
         <collision name='cylinder_collision'>
           <geometry>
             <cylinder>
-              <radius>0.72</radius>
-              <length>0.72</length>
+              <radius>0.5</radius>
+              <length>0.99</length>
             </cylinder>
           </geometry>
           <surface>
@@ -833,8 +839,8 @@
         <visual name='cylinder_visual'>
           <geometry>
             <cylinder>
-              <radius>0.72</radius>
-              <length>0.72</length>
+              <radius>0.5</radius>
+              <length>0.99</length>
             </cylinder>
           </geometry>
           <material>
@@ -850,7 +856,7 @@
       <self_collide>false</self_collide>
     </model>
     <model name='cyl_1'>
-      <pose>-8.75 2.17 0.44 0 -0 0</pose>
+      <pose>-7.43 2.52 0.51 0 -0 0</pose>
       <link name='cylinder_link'>
         <inertial>
           <inertia>
@@ -867,8 +873,8 @@
         <collision name='cylinder_collision'>
           <geometry>
             <cylinder>
-              <radius>0.65</radius>
-              <length>0.88</length>
+              <radius>0.21</radius>
+              <length>1.02</length>
             </cylinder>
           </geometry>
           <surface>
@@ -882,14 +888,14 @@
         <visual name='cylinder_visual'>
           <geometry>
             <cylinder>
-              <radius>0.65</radius>
-              <length>0.88</length>
+              <radius>0.21</radius>
+              <length>1.02</length>
             </cylinder>
           </geometry>
           <material>
-            <ambient>1 0 0 1</ambient>
-            <diffuse>1 0 0 1</diffuse>
-            <specular>1 0 0 1</specular>
+            <ambient>0 1 0 1</ambient>
+            <diffuse>0 1 0 1</diffuse>
+            <specular>0 1 0 1</specular>
           </material>
         </visual>
         <pose>0 0 0 0 -0 0</pose>
@@ -899,7 +905,7 @@
       <self_collide>false</self_collide>
     </model>
     <model name='cyl_2'>
-      <pose>-8.53 -3.78 0.68 0 -0 0</pose>
+      <pose>-6.53 -2.44 0.57 0 -0 0</pose>
       <link name='cylinder_link'>
         <inertial>
           <inertia>
@@ -916,8 +922,8 @@
         <collision name='cylinder_collision'>
           <geometry>
             <cylinder>
-              <radius>0.45</radius>
-              <length>1.35</length>
+              <radius>0.61</radius>
+              <length>1.15</length>
             </cylinder>
           </geometry>
           <surface>
@@ -931,8 +937,8 @@
         <visual name='cylinder_visual'>
           <geometry>
             <cylinder>
-              <radius>0.45</radius>
-              <length>1.35</length>
+              <radius>0.61</radius>
+              <length>1.15</length>
             </cylinder>
           </geometry>
           <material>
@@ -948,7 +954,7 @@
       <self_collide>false</self_collide>
     </model>
     <model name='cyl_3'>
-      <pose>-7.79 3.47 0.17 0 -0 0</pose>
+      <pose>-4.78 2.42 0.15 0 -0 0</pose>
       <link name='cylinder_link'>
         <inertial>
           <inertia>
@@ -965,8 +971,8 @@
         <collision name='cylinder_collision'>
           <geometry>
             <cylinder>
-              <radius>0.44</radius>
-              <length>0.33</length>
+              <radius>0.63</radius>
+              <length>0.31</length>
             </cylinder>
           </geometry>
           <surface>
@@ -980,14 +986,14 @@
         <visual name='cylinder_visual'>
           <geometry>
             <cylinder>
-              <radius>0.44</radius>
-              <length>0.33</length>
+              <radius>0.63</radius>
+              <length>0.31</length>
             </cylinder>
           </geometry>
           <material>
-            <ambient>0 1 0 1</ambient>
-            <diffuse>0 1 0 1</diffuse>
-            <specular>0 1 0 1</specular>
+            <ambient>1 0 0 1</ambient>
+            <diffuse>1 0 0 1</diffuse>
+            <specular>1 0 0 1</specular>
           </material>
         </visual>
         <pose>0 0 0 0 -0 0</pose>
@@ -997,7 +1003,7 @@
       <self_collide>false</self_collide>
     </model>
     <model name='cyl_4'>
-      <pose>-6.6 -3.72 0.34 0 -0 0</pose>
+      <pose>-3.67 -3.22 0.11 0 -0 0</pose>
       <link name='cylinder_link'>
         <inertial>
           <inertia>
@@ -1014,8 +1020,8 @@
         <collision name='cylinder_collision'>
           <geometry>
             <cylinder>
-              <radius>0.33</radius>
-              <length>0.67</length>
+              <radius>0.5</radius>
+              <length>0.22</length>
             </cylinder>
           </geometry>
           <surface>
@@ -1029,8 +1035,8 @@
         <visual name='cylinder_visual'>
           <geometry>
             <cylinder>
-              <radius>0.33</radius>
-              <length>0.67</length>
+              <radius>0.5</radius>
+              <length>0.22</length>
             </cylinder>
           </geometry>
           <material>
@@ -1046,7 +1052,7 @@
       <self_collide>false</self_collide>
     </model>
     <model name='cyl_5'>
-      <pose>-4.88 1.74 0.18 0 -0 0</pose>
+      <pose>-1.93 3.13 0.22 0 -0 0</pose>
       <link name='cylinder_link'>
         <inertial>
           <inertia>
@@ -1063,8 +1069,8 @@
         <collision name='cylinder_collision'>
           <geometry>
             <cylinder>
-              <radius>0.79</radius>
-              <length>0.36</length>
+              <radius>0.55</radius>
+              <length>0.44</length>
             </cylinder>
           </geometry>
           <surface>
@@ -1078,57 +1084,8 @@
         <visual name='cylinder_visual'>
           <geometry>
             <cylinder>
-              <radius>0.79</radius>
-              <length>0.36</length>
-            </cylinder>
-          </geometry>
-          <material>
-            <ambient>0 0 1 1</ambient>
-            <diffuse>0 0 1 1</diffuse>
-            <specular>0 0 1 1</specular>
-          </material>
-        </visual>
-        <pose>0 0 0 0 -0 0</pose>
-        <enable_wind>false</enable_wind>
-      </link>
-      <static>false</static>
-      <self_collide>false</self_collide>
-    </model>
-    <model name='cyl_6'>
-      <pose>-4.93 -3.33 0.69 0 -0 0</pose>
-      <link name='cylinder_link'>
-        <inertial>
-          <inertia>
-            <ixx>0.14580000000000001</ixx>
-            <ixy>0</ixy>
-            <ixz>0</ixz>
-            <iyy>0.14580000000000001</iyy>
-            <iyz>0</iyz>
-            <izz>0.125</izz>
-          </inertia>
-          <mass>1</mass>
-          <pose>0 0 0 0 -0 0</pose>
-        </inertial>
-        <collision name='cylinder_collision'>
-          <geometry>
-            <cylinder>
-              <radius>0.8</radius>
-              <length>1.39</length>
-            </cylinder>
-          </geometry>
-          <surface>
-            <friction>
-              <ode/>
-            </friction>
-            <bounce/>
-            <contact/>
-          </surface>
-        </collision>
-        <visual name='cylinder_visual'>
-          <geometry>
-            <cylinder>
-              <radius>0.8</radius>
-              <length>1.39</length>
+              <radius>0.55</radius>
+              <length>0.44</length>
             </cylinder>
           </geometry>
           <material>
@@ -1143,8 +1100,8 @@
       <static>false</static>
       <self_collide>false</self_collide>
     </model>
-    <model name='cyl_7'>
-      <pose>-4.13 2.8 0.24 0 -0 0</pose>
+    <model name='cyl_6'>
+      <pose>-1.45 -1.67 0.46 0 -0 0</pose>
       <link name='cylinder_link'>
         <inertial>
           <inertia>
@@ -1161,8 +1118,8 @@
         <collision name='cylinder_collision'>
           <geometry>
             <cylinder>
-              <radius>0.64</radius>
-              <length>0.49</length>
+              <radius>0.45</radius>
+              <length>0.92</length>
             </cylinder>
           </geometry>
           <surface>
@@ -1176,8 +1133,8 @@
         <visual name='cylinder_visual'>
           <geometry>
             <cylinder>
-              <radius>0.64</radius>
-              <length>0.49</length>
+              <radius>0.45</radius>
+              <length>0.92</length>
             </cylinder>
           </geometry>
           <material>
@@ -1192,8 +1149,8 @@
       <static>false</static>
       <self_collide>false</self_collide>
     </model>
-    <model name='cyl_8'>
-      <pose>-3.29 -3.06 0.42 0 -0 0</pose>
+    <model name='cyl_7'>
+      <pose>0.23 3.98 0.17 0 -0 0</pose>
       <link name='cylinder_link'>
         <inertial>
           <inertia>
@@ -1210,8 +1167,8 @@
         <collision name='cylinder_collision'>
           <geometry>
             <cylinder>
-              <radius>0.7</radius>
-              <length>0.85</length>
+              <radius>0.56</radius>
+              <length>0.35</length>
             </cylinder>
           </geometry>
           <surface>
@@ -1225,8 +1182,8 @@
         <visual name='cylinder_visual'>
           <geometry>
             <cylinder>
-              <radius>0.7</radius>
-              <length>0.85</length>
+              <radius>0.56</radius>
+              <length>0.35</length>
             </cylinder>
           </geometry>
           <material>
@@ -1241,8 +1198,8 @@
       <static>false</static>
       <self_collide>false</self_collide>
     </model>
-    <model name='cyl_9'>
-      <pose>-2.32 2.61 0.22 0 -0 0</pose>
+    <model name='cyl_8'>
+      <pose>1.88 -3.31 0.54 0 -0 0</pose>
       <link name='cylinder_link'>
         <inertial>
           <inertia>
@@ -1259,8 +1216,8 @@
         <collision name='cylinder_collision'>
           <geometry>
             <cylinder>
-              <radius>0.28</radius>
-              <length>0.44</length>
+              <radius>0.23</radius>
+              <length>1.07</length>
             </cylinder>
           </geometry>
           <surface>
@@ -1274,8 +1231,57 @@
         <visual name='cylinder_visual'>
           <geometry>
             <cylinder>
-              <radius>0.28</radius>
-              <length>0.44</length>
+              <radius>0.23</radius>
+              <length>1.07</length>
+            </cylinder>
+          </geometry>
+          <material>
+            <ambient>0 1 0 1</ambient>
+            <diffuse>0 1 0 1</diffuse>
+            <specular>0 1 0 1</specular>
+          </material>
+        </visual>
+        <pose>0 0 0 0 -0 0</pose>
+        <enable_wind>false</enable_wind>
+      </link>
+      <static>false</static>
+      <self_collide>false</self_collide>
+    </model>
+    <model name='cyl_9'>
+      <pose>2.86 2.25 0.72 0 -0 0</pose>
+      <link name='cylinder_link'>
+        <inertial>
+          <inertia>
+            <ixx>0.14580000000000001</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.14580000000000001</iyy>
+            <iyz>0</iyz>
+            <izz>0.125</izz>
+          </inertia>
+          <mass>1</mass>
+          <pose>0 0 0 0 -0 0</pose>
+        </inertial>
+        <collision name='cylinder_collision'>
+          <geometry>
+            <cylinder>
+              <radius>0.8</radius>
+              <length>1.44</length>
+            </cylinder>
+          </geometry>
+          <surface>
+            <friction>
+              <ode/>
+            </friction>
+            <bounce/>
+            <contact/>
+          </surface>
+        </collision>
+        <visual name='cylinder_visual'>
+          <geometry>
+            <cylinder>
+              <radius>0.8</radius>
+              <length>1.44</length>
             </cylinder>
           </geometry>
           <material>
@@ -1291,7 +1297,7 @@
       <self_collide>false</self_collide>
     </model>
     <model name='cyl_10'>
-      <pose>-1.2 -2.39 0.57 0 -0 0</pose>
+      <pose>2.95 -3.33 0.7 0 -0 0</pose>
       <link name='cylinder_link'>
         <inertial>
           <inertia>
@@ -1308,8 +1314,8 @@
         <collision name='cylinder_collision'>
           <geometry>
             <cylinder>
-              <radius>0.63</radius>
-              <length>1.14</length>
+              <radius>0.26</radius>
+              <length>1.41</length>
             </cylinder>
           </geometry>
           <surface>
@@ -1323,14 +1329,14 @@
         <visual name='cylinder_visual'>
           <geometry>
             <cylinder>
-              <radius>0.63</radius>
-              <length>1.14</length>
+              <radius>0.26</radius>
+              <length>1.41</length>
             </cylinder>
           </geometry>
           <material>
-            <ambient>0 1 0 1</ambient>
-            <diffuse>0 1 0 1</diffuse>
-            <specular>0 1 0 1</specular>
+            <ambient>0 0 1 1</ambient>
+            <diffuse>0 0 1 1</diffuse>
+            <specular>0 0 1 1</specular>
           </material>
         </visual>
         <pose>0 0 0 0 -0 0</pose>
@@ -1340,7 +1346,7 @@
       <self_collide>false</self_collide>
     </model>
     <model name='cyl_11'>
-      <pose>-0.67 1.58 0.17 0 -0 0</pose>
+      <pose>4.03 1.78 0.65 0 -0 0</pose>
       <link name='cylinder_link'>
         <inertial>
           <inertia>
@@ -1357,8 +1363,8 @@
         <collision name='cylinder_collision'>
           <geometry>
             <cylinder>
-              <radius>0.68</radius>
-              <length>0.35</length>
+              <radius>0.67</radius>
+              <length>1.29</length>
             </cylinder>
           </geometry>
           <surface>
@@ -1372,8 +1378,8 @@
         <visual name='cylinder_visual'>
           <geometry>
             <cylinder>
-              <radius>0.68</radius>
-              <length>0.35</length>
+              <radius>0.67</radius>
+              <length>1.29</length>
             </cylinder>
           </geometry>
           <material>
@@ -1389,7 +1395,7 @@
       <self_collide>false</self_collide>
     </model>
     <model name='cyl_12'>
-      <pose>0.87 -3.45 0.69 0 -0 0</pose>
+      <pose>5.43 -2.86 0.6 0 -0 0</pose>
       <link name='cylinder_link'>
         <inertial>
           <inertia>
@@ -1406,8 +1412,8 @@
         <collision name='cylinder_collision'>
           <geometry>
             <cylinder>
-              <radius>0.43</radius>
-              <length>1.39</length>
+              <radius>0.22</radius>
+              <length>1.21</length>
             </cylinder>
           </geometry>
           <surface>
@@ -1421,14 +1427,14 @@
         <visual name='cylinder_visual'>
           <geometry>
             <cylinder>
-              <radius>0.43</radius>
-              <length>1.39</length>
+              <radius>0.22</radius>
+              <length>1.21</length>
             </cylinder>
           </geometry>
           <material>
-            <ambient>0 1 0 1</ambient>
-            <diffuse>0 1 0 1</diffuse>
-            <specular>0 1 0 1</specular>
+            <ambient>0 0 1 1</ambient>
+            <diffuse>0 0 1 1</diffuse>
+            <specular>0 0 1 1</specular>
           </material>
         </visual>
         <pose>0 0 0 0 -0 0</pose>
@@ -1438,7 +1444,7 @@
       <self_collide>false</self_collide>
     </model>
     <model name='cyl_13'>
-      <pose>1.88 2.99 0.2 0 -0 0</pose>
+      <pose>6.85 3.02 0.58 0 -0 0</pose>
       <link name='cylinder_link'>
         <inertial>
           <inertia>
@@ -1455,8 +1461,8 @@
         <collision name='cylinder_collision'>
           <geometry>
             <cylinder>
-              <radius>0.2</radius>
-              <length>0.4</length>
+              <radius>0.38</radius>
+              <length>1.16</length>
             </cylinder>
           </geometry>
           <surface>
@@ -1470,8 +1476,8 @@
         <visual name='cylinder_visual'>
           <geometry>
             <cylinder>
-              <radius>0.2</radius>
-              <length>0.4</length>
+              <radius>0.38</radius>
+              <length>1.16</length>
             </cylinder>
           </geometry>
           <material>
@@ -1487,7 +1493,7 @@
       <self_collide>false</self_collide>
     </model>
     <model name='cyl_14'>
-      <pose>3.52 -1.96 0.42 0 -0 0</pose>
+      <pose>8.27 -2.41 0.55 0 -0 0</pose>
       <link name='cylinder_link'>
         <inertial>
           <inertia>
@@ -1504,8 +1510,8 @@
         <collision name='cylinder_collision'>
           <geometry>
             <cylinder>
-              <radius>0.23</radius>
-              <length>0.84</length>
+              <radius>0.36</radius>
+              <length>1.09</length>
             </cylinder>
           </geometry>
           <surface>
@@ -1519,14 +1525,14 @@
         <visual name='cylinder_visual'>
           <geometry>
             <cylinder>
-              <radius>0.23</radius>
-              <length>0.84</length>
+              <radius>0.36</radius>
+              <length>1.09</length>
             </cylinder>
           </geometry>
           <material>
-            <ambient>1 0 0 1</ambient>
-            <diffuse>1 0 0 1</diffuse>
-            <specular>1 0 0 1</specular>
+            <ambient>0 1 0 1</ambient>
+            <diffuse>0 1 0 1</diffuse>
+            <specular>0 1 0 1</specular>
           </material>
         </visual>
         <pose>0 0 0 0 -0 0</pose>
@@ -1536,7 +1542,7 @@
       <self_collide>false</self_collide>
     </model>
     <model name='cyl_15'>
-      <pose>4.22 2.08 0.29 0 -0 0</pose>
+      <pose>9.55 3.41 0.33 0 -0 0</pose>
       <link name='cylinder_link'>
         <inertial>
           <inertia>
@@ -1553,8 +1559,8 @@
         <collision name='cylinder_collision'>
           <geometry>
             <cylinder>
-              <radius>0.53</radius>
-              <length>0.58</length>
+              <radius>0.43</radius>
+              <length>0.66</length>
             </cylinder>
           </geometry>
           <surface>
@@ -1568,8 +1574,8 @@
         <visual name='cylinder_visual'>
           <geometry>
             <cylinder>
-              <radius>0.53</radius>
-              <length>0.58</length>
+              <radius>0.43</radius>
+              <length>0.66</length>
             </cylinder>
           </geometry>
           <material>
@@ -1585,7 +1591,7 @@
       <self_collide>false</self_collide>
     </model>
     <model name='cyl_16'>
-      <pose>4.99 -1.94 0.68 0 -0 0</pose>
+      <pose>9.76 -1.68 0.14 0 -0 0</pose>
       <link name='cylinder_link'>
         <inertial>
           <inertia>
@@ -1602,8 +1608,8 @@
         <collision name='cylinder_collision'>
           <geometry>
             <cylinder>
-              <radius>0.63</radius>
-              <length>1.35</length>
+              <radius>0.53</radius>
+              <length>0.28</length>
             </cylinder>
           </geometry>
           <surface>
@@ -1617,8 +1623,57 @@
         <visual name='cylinder_visual'>
           <geometry>
             <cylinder>
-              <radius>0.63</radius>
-              <length>1.35</length>
+              <radius>0.53</radius>
+              <length>0.28</length>
+            </cylinder>
+          </geometry>
+          <material>
+            <ambient>0 0 1 1</ambient>
+            <diffuse>0 0 1 1</diffuse>
+            <specular>0 0 1 1</specular>
+          </material>
+        </visual>
+        <pose>0 0 0 0 -0 0</pose>
+        <enable_wind>false</enable_wind>
+      </link>
+      <static>false</static>
+      <self_collide>false</self_collide>
+    </model>
+    <model name='cyl_17'>
+      <pose>9.86 3.29 0.71 0 -0 0</pose>
+      <link name='cylinder_link'>
+        <inertial>
+          <inertia>
+            <ixx>0.14580000000000001</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.14580000000000001</iyy>
+            <iyz>0</iyz>
+            <izz>0.125</izz>
+          </inertia>
+          <mass>1</mass>
+          <pose>0 0 0 0 -0 0</pose>
+        </inertial>
+        <collision name='cylinder_collision'>
+          <geometry>
+            <cylinder>
+              <radius>0.58</radius>
+              <length>1.43</length>
+            </cylinder>
+          </geometry>
+          <surface>
+            <friction>
+              <ode/>
+            </friction>
+            <bounce/>
+            <contact/>
+          </surface>
+        </collision>
+        <visual name='cylinder_visual'>
+          <geometry>
+            <cylinder>
+              <radius>0.58</radius>
+              <length>1.43</length>
             </cylinder>
           </geometry>
           <material>
@@ -1633,8 +1688,8 @@
       <static>false</static>
       <self_collide>false</self_collide>
     </model>
-    <model name='cyl_17'>
-      <pose>5.32 3.98 0.44 0 -0 0</pose>
+    <model name='cyl_18'>
+      <pose>11.59 -3.2 0.49 0 -0 0</pose>
       <link name='cylinder_link'>
         <inertial>
           <inertia>
@@ -1651,8 +1706,8 @@
         <collision name='cylinder_collision'>
           <geometry>
             <cylinder>
-              <radius>0.58</radius>
-              <length>0.88</length>
+              <radius>0.45</radius>
+              <length>0.98</length>
             </cylinder>
           </geometry>
           <surface>
@@ -1666,8 +1721,57 @@
         <visual name='cylinder_visual'>
           <geometry>
             <cylinder>
-              <radius>0.58</radius>
-              <length>0.88</length>
+              <radius>0.45</radius>
+              <length>0.98</length>
+            </cylinder>
+          </geometry>
+          <material>
+            <ambient>0 0 1 1</ambient>
+            <diffuse>0 0 1 1</diffuse>
+            <specular>0 0 1 1</specular>
+          </material>
+        </visual>
+        <pose>0 0 0 0 -0 0</pose>
+        <enable_wind>false</enable_wind>
+      </link>
+      <static>false</static>
+      <self_collide>false</self_collide>
+    </model>
+    <model name='cyl_19'>
+      <pose>12.58 2.18 0.58 0 -0 0</pose>
+      <link name='cylinder_link'>
+        <inertial>
+          <inertia>
+            <ixx>0.14580000000000001</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.14580000000000001</iyy>
+            <iyz>0</iyz>
+            <izz>0.125</izz>
+          </inertia>
+          <mass>1</mass>
+          <pose>0 0 0 0 -0 0</pose>
+        </inertial>
+        <collision name='cylinder_collision'>
+          <geometry>
+            <cylinder>
+              <radius>0.43</radius>
+              <length>1.16</length>
+            </cylinder>
+          </geometry>
+          <surface>
+            <friction>
+              <ode/>
+            </friction>
+            <bounce/>
+            <contact/>
+          </surface>
+        </collision>
+        <visual name='cylinder_visual'>
+          <geometry>
+            <cylinder>
+              <radius>0.43</radius>
+              <length>1.16</length>
             </cylinder>
           </geometry>
           <material>
@@ -1682,106 +1786,8 @@
       <static>false</static>
       <self_collide>false</self_collide>
     </model>
-    <model name='cyl_18'>
-      <pose>6.84 -1.66 0.72 0 -0 0</pose>
-      <link name='cylinder_link'>
-        <inertial>
-          <inertia>
-            <ixx>0.14580000000000001</ixx>
-            <ixy>0</ixy>
-            <ixz>0</ixz>
-            <iyy>0.14580000000000001</iyy>
-            <iyz>0</iyz>
-            <izz>0.125</izz>
-          </inertia>
-          <mass>1</mass>
-          <pose>0 0 0 0 -0 0</pose>
-        </inertial>
-        <collision name='cylinder_collision'>
-          <geometry>
-            <cylinder>
-              <radius>0.27</radius>
-              <length>1.44</length>
-            </cylinder>
-          </geometry>
-          <surface>
-            <friction>
-              <ode/>
-            </friction>
-            <bounce/>
-            <contact/>
-          </surface>
-        </collision>
-        <visual name='cylinder_visual'>
-          <geometry>
-            <cylinder>
-              <radius>0.27</radius>
-              <length>1.44</length>
-            </cylinder>
-          </geometry>
-          <material>
-            <ambient>1 0 0 1</ambient>
-            <diffuse>1 0 0 1</diffuse>
-            <specular>1 0 0 1</specular>
-          </material>
-        </visual>
-        <pose>0 0 0 0 -0 0</pose>
-        <enable_wind>false</enable_wind>
-      </link>
-      <static>false</static>
-      <self_collide>false</self_collide>
-    </model>
-    <model name='cyl_19'>
-      <pose>8.11 1.66 0.5 0 -0 0</pose>
-      <link name='cylinder_link'>
-        <inertial>
-          <inertia>
-            <ixx>0.14580000000000001</ixx>
-            <ixy>0</ixy>
-            <ixz>0</ixz>
-            <iyy>0.14580000000000001</iyy>
-            <iyz>0</iyz>
-            <izz>0.125</izz>
-          </inertia>
-          <mass>1</mass>
-          <pose>0 0 0 0 -0 0</pose>
-        </inertial>
-        <collision name='cylinder_collision'>
-          <geometry>
-            <cylinder>
-              <radius>0.42</radius>
-              <length>1.0</length>
-            </cylinder>
-          </geometry>
-          <surface>
-            <friction>
-              <ode/>
-            </friction>
-            <bounce/>
-            <contact/>
-          </surface>
-        </collision>
-        <visual name='cylinder_visual'>
-          <geometry>
-            <cylinder>
-              <radius>0.42</radius>
-              <length>1.0</length>
-            </cylinder>
-          </geometry>
-          <material>
-            <ambient>1 0 0 1</ambient>
-            <diffuse>1 0 0 1</diffuse>
-            <specular>1 0 0 1</specular>
-          </material>
-        </visual>
-        <pose>0 0 0 0 -0 0</pose>
-        <enable_wind>false</enable_wind>
-      </link>
-      <static>false</static>
-      <self_collide>false</self_collide>
-    </model>
     <model name='cyl_20'>
-      <pose>8.31 -2.32 0.7 0 -0 0</pose>
+      <pose>13.34 -1.58 0.69 0 -0 0</pose>
       <link name='cylinder_link'>
         <inertial>
           <inertia>
@@ -1798,8 +1804,8 @@
         <collision name='cylinder_collision'>
           <geometry>
             <cylinder>
-              <radius>0.31</radius>
-              <length>1.41</length>
+              <radius>0.27</radius>
+              <length>1.39</length>
             </cylinder>
           </geometry>
           <surface>
@@ -1813,8 +1819,8 @@
         <visual name='cylinder_visual'>
           <geometry>
             <cylinder>
-              <radius>0.31</radius>
-              <length>1.41</length>
+              <radius>0.27</radius>
+              <length>1.39</length>
             </cylinder>
           </geometry>
           <material>
@@ -1830,7 +1836,7 @@
       <self_collide>false</self_collide>
     </model>
     <model name='cyl_21'>
-      <pose>8.2 2.56 0.47 0 -0 0</pose>
+      <pose>14.65 2.36 0.65 0 -0 0</pose>
       <link name='cylinder_link'>
         <inertial>
           <inertia>
@@ -1847,8 +1853,8 @@
         <collision name='cylinder_collision'>
           <geometry>
             <cylinder>
-              <radius>0.3</radius>
-              <length>0.95</length>
+              <radius>0.77</radius>
+              <length>1.29</length>
             </cylinder>
           </geometry>
           <surface>
@@ -1862,8 +1868,8 @@
         <visual name='cylinder_visual'>
           <geometry>
             <cylinder>
-              <radius>0.3</radius>
-              <length>0.95</length>
+              <radius>0.77</radius>
+              <length>1.29</length>
             </cylinder>
           </geometry>
           <material>
@@ -1879,7 +1885,7 @@
       <self_collide>false</self_collide>
     </model>
     <model name='cyl_22'>
-      <pose>9.83 -3.76 0.1 0 -0 0</pose>
+      <pose>15.46 -3.35 0.69 0 -0 0</pose>
       <link name='cylinder_link'>
         <inertial>
           <inertia>
@@ -1896,8 +1902,8 @@
         <collision name='cylinder_collision'>
           <geometry>
             <cylinder>
-              <radius>0.44</radius>
-              <length>0.21</length>
+              <radius>0.66</radius>
+              <length>1.37</length>
             </cylinder>
           </geometry>
           <surface>
@@ -1911,14 +1917,14 @@
         <visual name='cylinder_visual'>
           <geometry>
             <cylinder>
-              <radius>0.44</radius>
-              <length>0.21</length>
+              <radius>0.66</radius>
+              <length>1.37</length>
             </cylinder>
           </geometry>
           <material>
-            <ambient>1 0 0 1</ambient>
-            <diffuse>1 0 0 1</diffuse>
-            <specular>1 0 0 1</specular>
+            <ambient>0 0 1 1</ambient>
+            <diffuse>0 0 1 1</diffuse>
+            <specular>0 0 1 1</specular>
           </material>
         </visual>
         <pose>0 0 0 0 -0 0</pose>
@@ -1928,7 +1934,7 @@
       <self_collide>false</self_collide>
     </model>
     <model name='cyl_23'>
-      <pose>11.07 2.32 0.32 0 -0 0</pose>
+      <pose>15.76 3.31 0.33 0 -0 0</pose>
       <link name='cylinder_link'>
         <inertial>
           <inertia>
@@ -1945,8 +1951,8 @@
         <collision name='cylinder_collision'>
           <geometry>
             <cylinder>
-              <radius>0.43</radius>
-              <length>0.64</length>
+              <radius>0.72</radius>
+              <length>0.66</length>
             </cylinder>
           </geometry>
           <surface>
@@ -1960,8 +1966,8 @@
         <visual name='cylinder_visual'>
           <geometry>
             <cylinder>
-              <radius>0.43</radius>
-              <length>0.64</length>
+              <radius>0.72</radius>
+              <length>0.66</length>
             </cylinder>
           </geometry>
           <material>
@@ -1977,7 +1983,7 @@
       <self_collide>false</self_collide>
     </model>
     <model name='cyl_24'>
-      <pose>12.41 -2.06 0.68 0 -0 0</pose>
+      <pose>15.69 -3.65 0.17 0 -0 0</pose>
       <link name='cylinder_link'>
         <inertial>
           <inertia>
@@ -1994,8 +2000,8 @@
         <collision name='cylinder_collision'>
           <geometry>
             <cylinder>
-              <radius>0.44</radius>
-              <length>1.36</length>
+              <radius>0.37</radius>
+              <length>0.33</length>
             </cylinder>
           </geometry>
           <surface>
@@ -2009,8 +2015,8 @@
         <visual name='cylinder_visual'>
           <geometry>
             <cylinder>
-              <radius>0.44</radius>
-              <length>1.36</length>
+              <radius>0.37</radius>
+              <length>0.33</length>
             </cylinder>
           </geometry>
           <material>
@@ -2029,7 +2035,7 @@
 
            
     <model name='smoker_1'>
-  <pose>5.81 3.51 0 0 -0 0</pose>  <!-- where -->
+  <pose>1.15 3.47 0 0 -0 0</pose>  <!-- where -->
   <static>true</static>
   <link name="fog_link">
     <particle_emitter name="emitter" type="box">
@@ -2059,7 +2065,7 @@
 
 
 <model name='smoker_2'>
-  <pose>0.71 -2.57 0 0 -0 0</pose>  <!-- where -->
+  <pose>-3.43 -2.74 0 0 -0 0</pose>  <!-- where -->
   <static>true</static>
   <link name="fog_link">
     <particle_emitter name="emitter" type="box">

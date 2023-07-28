@@ -2,16 +2,29 @@
 This file is used to generate sensor data using gazebo.
 """
 
-from world_generation import generate_world, read_file, generate_tiles, generate_objects
+from world_generation import generate_world, read_file, generate_smoke, generate_objects
 import subprocess
 from threading import Thread, Event
-import time
 from ros2 import RosNode
+from sensor_msgs.msg import LaserScan, PointCloud
+from nav_msgs.msg import Odometry
+#from actuator_msgs.msg import 
+#from geometry_msgs.msg import
+#from action_msgs.msg import
+#from tf2_msgs.msg import
+#from tf2_geometry_msgs import Pose
+#from pcl_msgs.msg import
+#from diagnostic_msgs.msg import
+#from visualization_msgs.msg import
+#from map_msgs.msg import 
 
 
 def exec_command(command: str):
     output = subprocess.run(command.split(" "), capture_output=True)
     print(output.stdout)
+    ls = LaserScan()
+    ls.intensities
+
 
 
 def run_ros2_node(sensor_topics: dict[str, type], shared_event: Event, stop_event: Event):
@@ -27,8 +40,8 @@ def run_ros2_node(sensor_topics: dict[str, type], shared_event: Event, stop_even
 
 
 def run_sim(main_file: str, output_path: str, replace_map: dict[str, str], 
-        num_sims: int, step_size: float, duration_sec: float, sensor_topics: dict[str, type]
-    ):
+    num_sims: int, step_size: float, duration_sec: float, sensor_topics: dict[str, type]
+):
     num_iter = duration_sec / step_size
     replace_map["[[STEP_SIZE]]"] = str(step_size)
 
@@ -59,13 +72,20 @@ def main():
         num_sims=10,
         step_size=0.1,
         duration_sec=1,
-        sensor_topics=dict(), 
-        main_file="gazebo_templates/main_base1.sdf",
+        sensor_topics={
+            "/lidar": LaserScan,
+            "/lidar/points": PointCloud, # PointCloudPacked?
+            "/model/robot/odometry": Odometry,
+            # "/model/robot/tf": Pose_V?,
+        }, 
+        main_file="gazebo_templates/main_base.sdf",
         output_path="gazebo_generated/generated_world.sdf",
         replace_map={
+            "[[STEP_SIZE]]": str(0.1),
+            "[[TILES]]": "",
+            "[[CYLINDERS]]": generate_objects("gazebo_templates/cylinder_base.sdf"),
             "[[ROBOT]]": read_file("gazebo_templates/robot_stacked_drive.sdf"),
-            "[[TILES]]": generate_tiles("gazebo_templates/tile_base.sdf"),
-            "[[CYLINDERS]]": generate_objects("gazebo_templates/cylinder_base.sdf")
+            "[[SMOKE]]": generate_smoke("gazebo_templates/fogemitter.sdf"),
         },
     )
 
