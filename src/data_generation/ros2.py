@@ -1,11 +1,29 @@
 import rclpy
-from typing import Dict
 from threading import Event
 from rclpy.node import Node
 from rclpy.executors import SingleThreadedExecutor
 from rclpy.qos import qos_profile_sensor_data
-from sensor_msgs.msg import Image, LaserScan
 from geometry_msgs.msg import Twist
+from dataclasses import dataclass
+
+
+@dataclass
+class TopicMapping:
+    topic: str
+    ros_type: str
+    gz_type: str
+
+    def __init__(self, topic: str, gz_type: str, ros_type: str):
+        self.topic = topic
+        self.gz_type = gz_type
+        self.ros_type = ros_type
+
+    def get_class(self) -> type:
+        """Imports and creates a python class from a string of type: module/path/Class"""
+        parts = self.ros_type.split("/")
+        module_path = ".".join(parts[:-1])
+        i = __import__(module_path, fromlist=parts[-1])
+        return getattr(i, parts[-1])
 
 
 class PubNode(Node):
@@ -36,7 +54,7 @@ class SubNode(Node):
 
 
 class RosNode():
-    def __init__(self, pub_topic: str, topic_msg_map: Dict[str, type], pub_rate_sec: float, save_event: Event|None=None, stop_event: Event|None=None):
+    def __init__(self, pub_topic: str, topic_msg_map: list[TopicMapping], pub_rate_sec: float, save_event: Event|None=None, stop_event: Event|None=None):
         rclpy.init()
         self.executor = SingleThreadedExecutor()
         self.executor.add_node(PubNode(pub_topic, 0.5, pub_rate_sec))
@@ -44,9 +62,13 @@ class RosNode():
         self.stop_event = stop_event if stop_event is not None else Event();
 
         self.values = {}
-        for topic, MsgType in topic_msg_map.items():
-            self.values[topic] = []
-            self.executor.add_node(SubNode(topic, MsgType, self.values[topic]))
+        for topic_mapping in topic_msg_map:
+            self.values[topic_mapping.topic] = []
+            self.executor.add_node(SubNode(
+                topic=topic_mapping.topic, 
+                MsgType=topic_mapping.get_class(), 
+                values=self.values[topic_mapping.topic]
+            ))
 
     def save_data(self):
         # TODO: Store data to file
