@@ -99,7 +99,6 @@ def generate_objects(template_path: str) -> str:
     no_obj = 25
     posx = -10
     increment = 20 /no_obj
-    print(increment)
     for i in range(no_obj):
    
         # replacement for [[OBJECT]]

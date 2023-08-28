@@ -5,6 +5,7 @@ from rclpy.executors import SingleThreadedExecutor
 from rclpy.qos import qos_profile_sensor_data
 from geometry_msgs.msg import Twist
 from dataclasses import dataclass
+import pickle
 
 
 @dataclass
@@ -29,7 +30,7 @@ class TopicMapping:
 class PubNode(Node):
     def __init__(self, topic: str, publish_value: float=10, publish_rate_sec: float=1):
         super().__init__('publisher')
-        self.publisher_ = self.create_publisher(Twist, topic, 10) # TODO: Set correct message type
+        self.publisher_ = self.create_publisher(Twist, topic, 10)
         self.timer = self.create_timer(publish_rate_sec, self.timer_callback)
         self.publish_value = publish_value
 
@@ -39,7 +40,7 @@ class PubNode(Node):
         msg.angular.z = float(0)
 
         self.publisher_.publish(msg)
-        self.get_logger().info('Publishing: "%s"' % msg.linear)
+        #self.get_logger().info('Publishing: "%s"' % msg.linear)
 
 
 class SubNode(Node):
@@ -49,8 +50,8 @@ class SubNode(Node):
         self.values = values
 
     def sub_callback(self, msg):
-        self.get_logger().info('Receiving: "%s"' % msg.data)
-        self.values.append(msg.data)
+        #self.get_logger().info('Receiving: "%s"' % msg)
+        self.values.append(msg)
 
 
 class RosNode():
@@ -61,20 +62,26 @@ class RosNode():
         self.save_event = save_event if save_event is not None else Event();
         self.stop_event = stop_event if stop_event is not None else Event();
 
-        self.values = {}
+        self.vals_map = {}
         for topic_mapping in topic_msg_map:
-            self.values[topic_mapping.topic] = []
+            self.vals_map[topic_mapping.topic] = []
             self.executor.add_node(SubNode(
                 topic=topic_mapping.topic, 
                 MsgType=topic_mapping.get_class(), 
-                values=self.values[topic_mapping.topic]
+                values=self.vals_map[topic_mapping.topic]
             ))
 
     def save_data(self):
-        # TODO: Store data to file
-        print(self.values)
-        for vals in self.values.values():
+        print("Saving to file ... ", end="", flush=True)
+        vals_pickle = pickle.dumps(self.vals_map)
+        with open("data/data.pickle", "wb") as f:
+            f.write(vals_pickle)
+        print("done", flush=True)
+
+        for vals in self.vals_map.values():
             vals = []
+
+        print(self.vals_map, flush=True)
 
     def start(self):
         while not self.stop_event.is_set():
