@@ -78,10 +78,10 @@ class RosNode():
             f.write(vals_pickle)
         print("done", flush=True)
 
-        for vals in self.vals_map.values():
-            vals = []
+        for key in self.vals_map.keys():
+            self.vals_map[key] = []
 
-        print(self.vals_map, flush=True)
+        #print(self.vals_map, flush=True)
 
     def start(self):
         while not self.stop_event.is_set():
