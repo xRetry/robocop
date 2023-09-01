@@ -1,5 +1,40 @@
 import random
-from typing import Dict 
+from typing import Dict, Iterator
+
+
+class WorldGen:
+    main_file: str
+    output_path: str
+    replace_map: Dict[str, str|Iterator[str]]
+
+    def __init__(self, main_file: str, output_path: str):
+        self.main_file = main_file
+        self.output_path = output_path
+        self.replace_map = {}
+
+    def __iter__(self) -> Iterator[None]:
+        return self
+
+    def __next__(self) -> None:
+        main_content = read_file(self.main_file)
+
+        for old_str, new_str in self.replace_map.items():
+            if isinstance(new_str, Iterator): 
+                new_str = next(new_str)
+
+            main_content = main_content.replace(old_str, new_str)
+
+        write_file(self.output_path, main_content)
+        return None
+
+    def replace(self, old: str, new: str|Iterator[str]):
+        self.replace_map[old] = new
+        return self
+
+    def next(self, num: int=1) -> None:
+        for _ in range(num):
+            next(self)
+
 
 def read_file(path: str) -> str:
     file = open(path, "r")
@@ -7,20 +42,14 @@ def read_file(path: str) -> str:
     file.close()
     return content
 
+
 def write_file(path: str, content: str) -> None:
     file = open(path, "w")
     file.write(content)
     file.close()
 
-def generate_world(main_file: str, output_path: str, replace_map: Dict[str, str]) -> None:
-    main_content = read_file(main_file)
 
-    for old_str, new_str in replace_map.items():
-        main_content = main_content.replace(old_str, new_str)
-
-    write_file(output_path, main_content)
-
-def generate_tiles(template_path: str) -> str:
+def generate_tiles(template_path: str) -> Iterator[str]:
     full_string = ""
     template_string = read_file(template_path)
 
@@ -52,10 +81,10 @@ def generate_tiles(template_path: str) -> str:
 
             full_string += current_template
     
-    return full_string
+    yield full_string
 
 
-def generate_smoke(template_path: str) -> str:
+def generate_smoke(template_path: str) -> Iterator[str]:
     full_string = ""
     template_string = read_file(template_path)
     
@@ -83,9 +112,10 @@ def generate_smoke(template_path: str) -> str:
             
         full_string += current_template
         
-    return full_string
+    yield full_string
+
     
-def generate_objects(template_path: str) -> str:
+def generate_objects(template_path: str) -> Iterator[str]:
     full_string = ""
     template_string = read_file(template_path)
     
@@ -147,29 +177,22 @@ def generate_objects(template_path: str) -> str:
             
         full_string += current_template
        
-    return full_string
+    yield full_string
       
 
 def main():
-    generate_world(
-        main_file="gazebo_templates/main_base.sdf",
-        output_path="gazebo_generated/generated_world.sdf",
-        replace_map={
-            "[[STEP_SIZE]]": str(0.1),
-            "[[TILES]]": "",
-            "[[CYLINDERS]]": generate_objects("gazebo_templates/cylinder_base.sdf"),
-            "[[ROBOT]]": read_file("gazebo_templates/robot_stacked_drive.sdf"),
-            "[[SMOKE]]": generate_smoke("gazebo_templates/fogemitter.sdf")
-        },
-# =============================================================================
-#         replace_map={
-#             "[[STEP_SIZE]]": str(0.1),
-#             "[[TILES]]": generate_tiles("gazebo_templates/tile_base_ori.sdf"),
-#             "[[CYLINDERS]]": generate_objects("gazebo_templates/cylinder_base.sdf"),
-#             "[[ROBOT]]": read_file("gazebo_templates/robot_stacked_drive.sdf")
-#         },
-# =============================================================================
+    gen = (WorldGen(
+            main_file="gazebo_templates/main_base.sdf",
+            output_path="gazebo_generated/generated_world.sdf",
+        )
+        .replace("[[STEP_SIZE]]", str(0.1))
+        .replace("[[TILES]]", "")
+        .replace("[[CYLINDERS]]", generate_objects("gazebo_templates/cylinder_base.sdf"))
+        .replace("[[ROBOT]]", read_file("gazebo_templates/robot_stacked_drive.sdf"))
+        .replace("[[SMOKE]]", generate_smoke("gazebo_templates/fogemitter.sdf"))
     )
+    next(gen)
+
 
 if __name__ == "__main__":
     main()
