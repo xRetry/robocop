@@ -1,3 +1,3 @@
 #!/bin/sh
 
-docker run -it -v .:/ws --name gazebo gazebo 
+docker run -it -v ${PWD}/:/ws --name gazebo gazebo 
