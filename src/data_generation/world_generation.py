@@ -1,39 +1,31 @@
 import random
-from typing import Dict, Iterator
+from typing import Dict, Iterator, Callable
 
 
 class WorldGen:
     main_file: str
     output_path: str
-    replace_map: Dict[str, str|Iterator[str]]
+    replace_map: Dict[str, str|Callable[[],str]]
 
-    def __init__(self, main_file: str, output_path: str):
+    def __init__(self, main_file: str, output_path: str, replace_map: Dict[str, str|Callable[[], str]]):
         self.main_file = main_file
         self.output_path = output_path
-        self.replace_map = {}
+        self.replace_map = replace_map
 
-    def __iter__(self) -> Iterator[None]:
+    def __iter__(self) -> Iterator[str]:
         return self
 
-    def __next__(self) -> None:
+    def __next__(self) -> str:
         main_content = read_file(self.main_file)
 
         for old_str, new_str in self.replace_map.items():
-            if isinstance(new_str, Iterator): 
-                new_str = next(new_str)
+            if isinstance(new_str, Callable): 
+                new_str = new_str()
 
             main_content = main_content.replace(old_str, new_str)
 
         write_file(self.output_path, main_content)
-        return None
-
-    def replace(self, old: str, new: str|Iterator[str]):
-        self.replace_map[old] = new
-        return self
-
-    def next(self, num: int=1) -> None:
-        for _ in range(num):
-            next(self)
+        return self.output_path
 
 
 def read_file(path: str) -> str:
@@ -49,7 +41,7 @@ def write_file(path: str, content: str) -> None:
     file.close()
 
 
-def generate_tiles(template_path: str) -> Iterator[str]:
+def generate_tiles(template_path: str) -> str:
     full_string = ""
     template_string = read_file(template_path)
 
@@ -81,10 +73,10 @@ def generate_tiles(template_path: str) -> Iterator[str]:
 
             full_string += current_template
     
-    yield full_string
+    return full_string
 
 
-def generate_smoke(template_path: str) -> Iterator[str]:
+def generate_smoke(template_path: str) -> str:
     full_string = ""
     template_string = read_file(template_path)
     
@@ -112,10 +104,10 @@ def generate_smoke(template_path: str) -> Iterator[str]:
             
         full_string += current_template
         
-    yield full_string
+    return full_string
 
     
-def generate_objects(template_path: str) -> Iterator[str]:
+def generate_objects(template_path: str) -> str:
     full_string = ""
     template_string = read_file(template_path)
     
@@ -177,22 +169,19 @@ def generate_objects(template_path: str) -> Iterator[str]:
             
         full_string += current_template
        
-    yield full_string
+    return full_string
       
 
-def main():
-    gen = (WorldGen(
-            main_file="gazebo_templates/main_base.sdf",
-            output_path="gazebo_generated/generated_world.sdf",
-        )
-        .replace("[[STEP_SIZE]]", str(0.1))
-        .replace("[[TILES]]", "")
-        .replace("[[CYLINDERS]]", generate_objects("gazebo_templates/cylinder_base.sdf"))
-        .replace("[[ROBOT]]", read_file("gazebo_templates/robot_stacked_drive.sdf"))
-        .replace("[[SMOKE]]", generate_smoke("gazebo_templates/fogemitter.sdf"))
-    )
-    next(gen)
-
-
 if __name__ == "__main__":
-    main()
+    gen = WorldGen(
+        main_file="gazebo_templates/main_base.sdf",
+        output_path="gazebo_generated/generated_world.sdf",
+        replace_map={
+            "[[STEP_SIZE]]": str(0.1),
+            "[[TILES]]": "",
+            "[[CYLINDERS]]": lambda: generate_objects("gazebo_templates/cylinder_base.sdf"),
+            "[[ROBOT]]": lambda: read_file("gazebo_templates/robot_stacked_drive.sdf"),
+            "[[SMOKE]]": lambda: generate_smoke("gazebo_templates/fogemitter.sdf"),
+        })
+        
+    next(gen)
