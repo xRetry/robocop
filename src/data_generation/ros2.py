@@ -1,3 +1,7 @@
+"""
+This file implements a data collector in form of a ROS2 node.
+"""
+
 import rclpy
 from threading import Thread
 from rclpy.node import Node
@@ -12,6 +16,7 @@ import utils
 
 @dataclass
 class TopicMapping:
+    """A storage class for the mapping between Gazebo and ROS2 messages."""
     topic: str
     ros_type: str
     gz_type: str
@@ -30,6 +35,8 @@ class TopicMapping:
 
 
 class PubNode(Node):
+    """ROS2 publisher implementation to control the robot in the simulation."""
+
     def __init__(self, topic: str, publish_value: float=10, publish_rate_sec: float=1):
         super().__init__('publisher')
         self.publisher_ = self.create_publisher(Twist, topic, 10)
@@ -46,6 +53,8 @@ class PubNode(Node):
 
 
 class SubNode(Node):
+    """ROS2 subscription implementation to record the values from one specific robot sensor."""
+
     def __init__(self, topic: str, MsgType: type, values: list):
         super().__init__('subscriber')
         self.subscriber = self.create_subscription(MsgType, topic, self.sub_callback, qos_profile=qos_profile_sensor_data)
@@ -57,6 +66,7 @@ class SubNode(Node):
 
 
 class RosCollector(Collector):
+    """The implementation of a data collector using ROS2."""
     executor: SingleThreadedExecutor
     vals_map: dict[str, list]
     sensor_topics: list[TopicMapping]

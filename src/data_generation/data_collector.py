@@ -1,7 +1,12 @@
+"""
+This file contains the definition of a data collector.
+"""
+
 from threading import Event
 import abc
 
 class EventChannel:
+    """A wrapper for the shared events between the data collector and the simulation executor."""
     main_event: Event
     stop_event: Event
 
@@ -29,6 +34,8 @@ class EventChannel:
 
 
 class Collector(abc.ABC):
+    """An abstract definition of a data collector."""
+
     @abc.abstractmethod
     def start(self, event_channel: EventChannel) -> None:
         pass

@@ -1,8 +1,13 @@
+"""
+This file contains the implementation of the world generator.
+"""
+
 import random
 from typing import Dict, Iterator, Callable
 
 
 class WorldGen:
+    """An iterator creating .sdf files from templates, adding random variations in each new file."""
     main_file: str
     output_path: str
     replace_map: Dict[str, str|Callable[[],str]]
