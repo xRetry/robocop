@@ -232,7 +232,7 @@
                 <direction>0 0 -1</direction>
                 <cast_shadows>1</cast_shadows>
             </light>
-            <!-- SENSORS START HERE --> 
+            <!-- SENSORS START --> 
             <sensor name="imu_sensor" type="imu">
                 <topic>imu</topic>
                 <always_on>1</always_on>
@@ -410,7 +410,7 @@
                 </lidar>
             </sensor>
         </link>
-        <!-- SENSORS END HERE -->
+        <!-- SENSORS END -->
         <link name="front_left_wheel">
             <pose>0.256 0.2854 0.03282 0 0 0</pose>
             <inertial>

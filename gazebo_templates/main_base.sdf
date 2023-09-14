@@ -1,13 +1,14 @@
 <?xml version="1.0" ?>
 <sdf version='1.9'>
   <world name='car_world'>
+    <!-- ESSENTIAL START -->
 
     <physics name='1ms' type='ignored'>
       <max_step_size>[[STEP_SIZE]]</max_step_size>
       <real_time_factor>1</real_time_factor>
       <real_time_update_rate>1000</real_time_update_rate>
     </physics>
-
+    <!-- PLUG INS -->
     <plugin
       filename="ignition-gazebo-sensors-system"
       name="ignition::gazebo::systems::Sensors">
@@ -77,6 +78,26 @@
       <self_collide>false</self_collide>
     </model>
 
+    <light name='sun' type='directional'>
+      <pose>0 0 10 0 -0 0</pose>
+      <cast_shadows>true</cast_shadows>
+      <intensity>1</intensity>
+      <direction>-0.5 0.1 -0.9</direction>
+      <diffuse>0.8 0.8 0.8 1</diffuse>
+      <specular>0.2 0.2 0.2 1</specular>
+      <attenuation>
+        <range>1000</range>
+        <linear>0.01</linear>
+        <constant>0.90000000000000002</constant>
+        <quadratic>0.001</quadratic>
+      </attenuation>
+      <spot>
+        <inner_angle>0</inner_angle>
+        <outer_angle>0</outer_angle>
+        <falloff>0</falloff>
+      </spot>
+    </light>
+    <!-- ESSENTIAL END -->
   <model name='plank_left'>
     <pose>0 5.5 0 0 0 0</pose>
     <link name='link_1'>
@@ -182,7 +203,7 @@
     [[TILES]]       
     [[SMOKE]]
    
-
+<!-- prebuilt world -->
     <model name='salon'>
       <static>1</static>
       <link name='link'>
@@ -223,25 +244,6 @@
     </model>
 
 
-    <light name='sun' type='directional'>
-      <pose>0 0 10 0 -0 0</pose>
-      <cast_shadows>true</cast_shadows>
-      <intensity>1</intensity>
-      <direction>-0.5 0.1 -0.9</direction>
-      <diffuse>0.8 0.8 0.8 1</diffuse>
-      <specular>0.2 0.2 0.2 1</specular>
-      <attenuation>
-        <range>1000</range>
-        <linear>0.01</linear>
-        <constant>0.90000000000000002</constant>
-        <quadratic>0.001</quadratic>
-      </attenuation>
-      <spot>
-        <inner_angle>0</inner_angle>
-        <outer_angle>0</outer_angle>
-        <falloff>0</falloff>
-      </spot>
-    </light>
 
   </world>
 </sdf>
