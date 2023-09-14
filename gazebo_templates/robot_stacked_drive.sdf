@@ -1,4 +1,4 @@
-   <!-- Robot start -->
+   <!-- ROBOT START -->
    <model name="robot">
         <pose>-9 0 0.083 0 0 0</pose>
         <enable_wind>0</enable_wind>
@@ -619,7 +619,7 @@
                 </limit>
             </axis>
         </joint>
-
+        <!-- ROBOT CONTROLLER -->
          <plugin filename="ignition-gazebo-diff-drive-system"
                 name="ignition::gazebo::systems::DiffDrive">
                 <left_joint>rear_left_wheel_joint</left_joint>
@@ -630,3 +630,4 @@
                 <topic>cmd_vel</topic>
             </plugin>
         </model>
+        <!-- ROBOT END -->
