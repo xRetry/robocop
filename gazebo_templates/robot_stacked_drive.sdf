@@ -1,3 +1,4 @@
+   <!-- Robot start -->
    <model name="robot">
         <pose>-9 0 0.083 0 0 0</pose>
         <enable_wind>0</enable_wind>
@@ -231,6 +232,7 @@
                 <direction>0 0 -1</direction>
                 <cast_shadows>1</cast_shadows>
             </light>
+            <!-- SENSORS START HERE --> 
             <sensor name="imu_sensor" type="imu">
                 <topic>imu</topic>
                 <always_on>1</always_on>
@@ -312,7 +314,6 @@
             </sensor>
                     
             <visual name="camera_visual">
-            <topic>camera</topic>
                 <pose>0.43 0 0.26 0 0 0</pose>
                 <geometry>
                     <box>
@@ -321,6 +322,7 @@
                 </geometry>
             </visual>
             <sensor name="camera_front" type="camera">
+                <topic>camera</topic>
                 <pose>0.43 0 0.26 0 0 0</pose>
                 <always_on>1</always_on>
                 <update_rate>20</update_rate>
@@ -365,7 +367,7 @@
                 </camera>
             </sensor>
             <visual name="laser_visual">
-                <topic>laser</topic>
+                <!-- <topic>laser</topic> -->
                 <pose>0.08 0 0.3 0 0 0</pose>
                 <geometry>
                     <cylinder>
@@ -408,6 +410,7 @@
                 </lidar>
             </sensor>
         </link>
+        <!-- SENSORS END HERE -->
         <link name="front_left_wheel">
             <pose>0.256 0.2854 0.03282 0 0 0</pose>
             <inertial>
