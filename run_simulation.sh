@@ -1,0 +1,1 @@
+python3 src/data_generation/main.py
