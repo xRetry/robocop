@@ -1,0 +1,1 @@
+ docker run -it -v %cd%/:/ws --name gazebo_idsp gazebo_idsp

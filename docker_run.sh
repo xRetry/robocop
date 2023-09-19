@@ -1,5 +1,5 @@
 #!/bin/sh
 
-docker run -it -v ${PWD}/:/ws --name gazebo gazebo
+docker run -it -v ${PWD}/:/ws --name gazebo_idsp gazebo_idsp
 
-#For windows: docker run -it -v %cd%/:/ws --name gazebo gazebo
+
